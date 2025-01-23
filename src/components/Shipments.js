@@ -13,7 +13,9 @@ function Shipments() {
     email_id: "",
     mobile_no: "",
     status: "Open",
-    custom_lead_type: "",  // New field for lead type (Export/Import)
+    custom_lead_type: "",  // Export/Import
+    request_type: "",  // Product Enquiry, Request for Information, Suggestions, Other
+    custom_request_details: "",  // Additional details
   });
   const [message, setMessage] = useState("");  // To show success or error message
   const [messageType, setMessageType] = useState(""); // To track message type (success or error)
@@ -115,6 +117,35 @@ function Shipments() {
               <option value="Export">Export</option>
               <option value="Import">Import</option>
             </select>
+          </div>
+
+          {/* New Field: Request Type */}
+          <div className="form-group">
+            <label>Request Type:</label>
+            <select
+              name="request_type"
+              value={formData.request_type}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select Request Type</option>
+              <option value="Product Enquiry">Product Enquiry</option>
+              <option value="Request for Information">Request for Information</option>
+              <option value="Suggestions">Suggestions</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          {/* New Field: Custom Request Details */}
+          <div className="form-group">
+            <label>Additional Details:</label>
+            <textarea
+              name="custom_request_details"
+              value={formData.custom_request_details}
+              onChange={handleChange}
+              placeholder="Enter any additional details..."
+              rows="4"
+            ></textarea>
           </div>
 
           <button type="submit" className="submit-btn">Get Quote</button>

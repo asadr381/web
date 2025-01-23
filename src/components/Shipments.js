@@ -56,8 +56,8 @@ function Shipments() {
 
   return (
     <div className="shipments">
-      <h2>Manage Shipments</h2>
-      <p>Here you can view and manage your shipments.</p>
+      <h2>Give Your Information</h2>
+      <p>ULS Team Will contact You</p>
 
       {/* Success/Error Alert */}
       {message && (

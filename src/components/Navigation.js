@@ -18,6 +18,7 @@ function Navigation() {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/shipments">Shipments</Link></li>
         <li><Link to="/tracking">Tracking</Link></li>
+        <li><Link to="/services">Services</Link></li> {/* New Link to Services */}
       </ul>
     </nav>
   );

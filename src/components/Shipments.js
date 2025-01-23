@@ -13,6 +13,7 @@ function Shipments() {
     email_id: "",
     mobile_no: "",
     status: "Open",
+    custom_lead_type: "",  // New field for lead type (Export/Import)
   });
   const [message, setMessage] = useState("");  // To show success or error message
   const [messageType, setMessageType] = useState(""); // To track message type (success or error)
@@ -100,6 +101,22 @@ function Shipments() {
               required
             />
           </div>
+
+          {/* New Field: Custom Lead Type */}
+          <div className="form-group">
+            <label>Lead Type:</label>
+            <select
+              name="custom_lead_type"
+              value={formData.custom_lead_type}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select Lead Type</option>
+              <option value="Export">Export</option>
+              <option value="Import">Import</option>
+            </select>
+          </div>
+
           <button type="submit" className="submit-btn">Get Quote</button>
         </form>
       </div>

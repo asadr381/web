@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navigation.css';
+import logo from '../img/UPS-logo.png'; // Add your logo image
 
 function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,14 +12,24 @@ function Navigation() {
 
   return (
     <nav className="navbar">
-      <div className="hamburger" onClick={toggleMenu}>
+      {/* Logo on the Left */}
+      <div className="logo">
+        <Link to="/">
+          <img src={logo} alt="Logo" />
+        </Link>
+      </div>
+
+      {/* Hamburger Menu on the Right */}
+      <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
         ☰
       </div>
+
+      {/* Navigation Links */}
       <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/shipments">Shipments</Link></li>
-        <li><Link to="/tracking">Tracking</Link></li>
-        <li><Link to="/services">Services</Link></li> {/* New Link to Services */}
+        <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
+        <li><Link to="/shipments" onClick={toggleMenu}>Shipments</Link></li>
+        <li><Link to="/tracking" onClick={toggleMenu}>Tracking</Link></li>
+        <li><Link to="/services" onClick={toggleMenu}>Services</Link></li>
       </ul>
     </nav>
   );

@@ -1,0 +1,40 @@
+/* Button Styles */
+.track-button,
+.download-button,
+.external-button {
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 10px;
+  background-color: #0056b3;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.track-button:hover,
+.download-button:hover,
+.external-button:hover {
+  background-color: #004085;
+  transform: translateY(-2px);
+}
+
+.track-button.bulk {
+  background-color: #28a745;
+}
+
+.track-button.bulk:hover {
+  background-color: #218838;
+}
+
+/* External Button Specific Styles */
+.external-button {
+  background-color: #ff5722; /* Orange color */
+}
+
+.external-button:hover {
+  background-color: #e64a19;
+}

@@ -4,7 +4,25 @@ import './Tracking.css';
 
 const ShipmentDetails = () => {
   const [trackingNumber, setTrackingNumber] = useState('');
-  const [shipmentDetails, setShipmentDetails] = useState(null);
+  const [shipmentDetails, setShipmentDetails] = useState({
+    number: '',
+    firstSixDigits: '',
+    currentStatus: '',
+    formattedDeliveryDate: '',
+    formattedActivities: [],
+    formattedLastScanDate: '',
+    formattedLastScanTime: '',
+    lastScanCountry: '',
+    receivedBy: '',
+    destinationCountry: '',
+    destinationCity: '',
+    originCountry: '',
+    originCity: '',
+    packageCount: '',
+    dimWeight: '',
+    weight: '',
+    service: ''
+  });
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -18,7 +36,6 @@ const ShipmentDetails = () => {
 
     setLoading(true);
     setError(null);
-    setShipmentDetails(null);
 
     try {
       const response = await axios.get(`${apiBaseUrl}${trackingNumber}`);
@@ -97,24 +114,22 @@ const ShipmentDetails = () => {
 
       {error && <p className="error-message">{error}</p>}
 
-      {shipmentDetails && (
-        <div className="details-grid">
-          <div><strong>ICIRS Number:</strong> {shipmentDetails.firstSixDigits}</div>
-          <div><strong>Status:</strong> {shipmentDetails.currentStatus}</div>
-          <div><strong>Delivery Date:</strong> {shipmentDetails.formattedDeliveryDate}</div>
-          <div><strong>Last Scan Date:</strong> {shipmentDetails.formattedLastScanDate} at {shipmentDetails.formattedLastScanTime} Local Time</div>
-          <div><strong>Last Scan Country:</strong> {shipmentDetails.lastScanCountry}</div>
-          <div><strong>Received By:</strong> {shipmentDetails.receivedBy}</div>
-          <div><strong>Destination Country:</strong> {shipmentDetails.destinationCountry}</div>
-          <div><strong>Destination City:</strong> {shipmentDetails.destinationCity}</div>
-          <div><strong>Origin Country:</strong> {shipmentDetails.originCountry}</div>
-          <div><strong>Origin City:</strong> {shipmentDetails.originCity}</div>
-          <div><strong>Package Count:</strong> {shipmentDetails.packageCount}</div>
-          <div><strong>Dimension Weight:</strong> {shipmentDetails.dimWeight}</div>
-          <div><strong>Weight:</strong> {shipmentDetails.weight}</div>
-          <div><strong>Service:</strong> {shipmentDetails.service}</div>
-        </div>
-      )}
+      <div className="details-grid">
+        <div><strong>ICIRS Number:</strong> {shipmentDetails.firstSixDigits}</div>
+        <div><strong>Status:</strong> {shipmentDetails.currentStatus}</div>
+        <div><strong>Delivery Date:</strong> {shipmentDetails.formattedDeliveryDate}</div>
+        <div><strong>Last Scan Date:</strong> {shipmentDetails.formattedLastScanDate} at {shipmentDetails.formattedLastScanTime} Local Time</div>
+        <div><strong>Last Scan Country:</strong> {shipmentDetails.lastScanCountry}</div>
+        <div><strong>Received By:</strong> {shipmentDetails.receivedBy}</div>
+        <div><strong>Destination Country:</strong> {shipmentDetails.destinationCountry}</div>
+        <div><strong>Destination City:</strong> {shipmentDetails.destinationCity}</div>
+        <div><strong>Origin Country:</strong> {shipmentDetails.originCountry}</div>
+        <div><strong>Origin City:</strong> {shipmentDetails.originCity}</div>
+        <div><strong>Package Count:</strong> {shipmentDetails.packageCount}</div>
+        <div><strong>Dimension Weight:</strong> {shipmentDetails.dimWeight}</div>
+        <div><strong>Weight:</strong> {shipmentDetails.weight}</div>
+        <div><strong>Service:</strong> {shipmentDetails.service}</div>
+      </div>
 
       {/* Loading Popup */}
       {loading && (

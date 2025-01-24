@@ -47,13 +47,13 @@ function Shipments() {
           },
         }
       );
-      setMessage("✅ Lead created successfully!");
+      setMessage("✅ Your request has been submitted successfully!");
       setMessageType("success");
-      console.log("✅ Lead created successfully:", response.data);
+      console.log("✅ Your Request Has Been Submitted successfully:", response.data);
     } catch (error) {
-      setMessage("❌ Failed to create lead. Please try again.");
+      setMessage("❌ Failed to create request. Please try again.");
       setMessageType("error");
-      console.error("❌ Failed to create lead:", error.response?.data || error.message);
+      console.error("❌ Failed to create request:", error.response?.data || error.message);
     }
   };
 
@@ -106,7 +106,7 @@ function Shipments() {
 
           {/* New Field: Custom Lead Type */}
           <div className="form-group">
-            <label>Lead Type:</label>
+            <label>Product Type:</label>
             <select
               name="custom_lead_type"
               value={formData.custom_lead_type}

@@ -150,4 +150,13 @@
     margin: 1rem;
     padding-right: 1.5rem;
   }
+  .navbar h3 {
+    flex-grow: 0; /* Prevent text from shifting on mobile */
+    text-align: center; /* Ensure text is centered */
+  }
+}
+.navbar h6 {
+  color: white;
+  text-align: left;
+  flex-grow: 1;
 }

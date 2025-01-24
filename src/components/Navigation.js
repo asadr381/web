@@ -18,12 +18,12 @@ function Navigation() {
           <img src={logo} alt="Logo" />
         </Link>
       </div>
-
+      <h6 style={{ color: 'white', alignContent: 'center' }}>UPS Authorised Service Contractor Pakistan </h6>
       {/* Hamburger Menu on the Right */}
       <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
         ☰
       </div>
-
+      
       {/* Navigation Links */}
       <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
         <li><Link to="/" onClick={toggleMenu}>Home</Link></li>

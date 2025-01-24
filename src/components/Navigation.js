@@ -30,6 +30,7 @@ function Navigation() {
         <li><Link to="/shipments" onClick={toggleMenu}>Shipments</Link></li>
         <li><Link to="/tracking" onClick={toggleMenu}>Tracking</Link></li>
         <li><Link to="/services" onClick={toggleMenu}>Services</Link></li>
+        <li><Link to="/PrivacyPolicy" onClick={toggleMenu}>PrivacyPolicy</Link></li>
       </ul>
     </nav>
   );

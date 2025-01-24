@@ -135,7 +135,7 @@
     right: -250px; /* Start off-screen */
     width: 250px;
     height: 100vh;
-    background-color: rgba(185, 90, 0, 0.95);
+    background-color: #351c15;
     text-align: right;
     padding-top: 3rem;
     transition: right 0.4s ease-in-out;

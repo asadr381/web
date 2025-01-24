@@ -7,7 +7,8 @@ import Home from './components/Home';
 import Shipments from './components/Shipments';
 import Tracking from './components/Tracking';
 import Services from './components/Services'; // Import Services component
-import Footer from './components/Footer'; // Import Footer component
+import Footer from './components/Footer'; 
+import PrivacyPolicy from './components/PrivacyPolicy';// Import Footer component
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
           <Route path="/shipments" element={<Shipments />} />
           <Route path="/tracking" element={<Tracking />} />
           <Route path="/services" element={<Services />} /> {/* Add Route for Services */}
+          <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+
+
         </Routes>
 
         <Footer /> {/* Add Footer at the bottom */}

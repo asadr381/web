@@ -136,3 +136,56 @@
     font-size: 0.9rem;
   }
 }
+.office-locations {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.office-card {
+  flex: 1;
+  background: #f7f7f7;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 30%;
+}
+
+.office-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.office-card h3 {
+  color: #351c15;
+  margin-bottom: 10px;
+}
+
+.office-card p {
+  color: black;
+  font-size: 14px;
+}
+
+/* Responsive for Tablets */
+@media screen and (max-width: 1024px) {
+  .office-card {
+    max-width: 45%;
+  }
+}
+
+/* Responsive for Mobile */
+@media screen and (max-width: 768px) {
+  .office-locations {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .office-card {
+    max-width: 90%;
+  }
+}

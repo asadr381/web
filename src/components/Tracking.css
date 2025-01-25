@@ -110,9 +110,9 @@ button:disabled {
 
 /* Button Styles */
 .track-button {
-  background-color: #ffc400;
+  background-color: #351c15;
   padding: 12px 24px;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: bold;

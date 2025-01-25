@@ -18,7 +18,9 @@ function Navigation() {
           <img src={logo} alt="Logo" />
         </Link>
       </div>
-      <h6 style={{ color: 'white', alignContent: 'center' }}>UPS Authorised Service Contractor Pakistan </h6>
+      <h4 style={{ color: 'white', alignContent: 'center' }}>UPS Authorised Service Contractor Pakistan </h4>
+      
+      
       {/* Hamburger Menu on the Right */}
       <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
         ☰
@@ -30,7 +32,8 @@ function Navigation() {
         <li><Link to="/shipments" onClick={toggleMenu}>Shipments</Link></li>
         <li><Link to="/tracking" onClick={toggleMenu}>Tracking</Link></li>
         <li><Link to="/services" onClick={toggleMenu}>Services</Link></li>
-        <li><Link to="/PrivacyPolicy" onClick={toggleMenu}>PrivacyPolicy</Link></li>
+        <li><Link to="/ContactUs" onClick={toggleMenu}>ContactUs</Link></li>
+        <li><Link to="/PrivacyPolicy" onClick={toggleMenu}>Privacy Policy</Link></li>
       </ul>
     </nav>
   );

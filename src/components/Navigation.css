@@ -94,7 +94,7 @@
 
 /* Logo Styling */
 .logo img {
-  height: 50px;
+  height: 100px;
 }
 
 /* Hamburger Menu */
@@ -155,7 +155,7 @@
     text-align: center; /* Ensure text is centered */
   }
 }
-.navbar h6 {
+.navbar h4 {
   color: white;
   text-align: left;
   flex-grow: 1;

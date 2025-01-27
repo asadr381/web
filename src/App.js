@@ -9,7 +9,8 @@ import Tracking from './components/Tracking';
 import Services from './components/Services'; // Import Services component
 import Footer from './components/Footer'; 
 import PrivacyPolicy from './components/PrivacyPolicy';
-import ContactUs from './components/ContactUs';// Import Footer component
+import ContactUs from './components/ContactUs';
+import AboutUs from './components/AboutUs';// Import Footer component
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
           <Route path="/shipments" element={<Shipments />} />
           <Route path="/tracking" element={<Tracking />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/ContactUs" element={<ContactUs />} /> {/* Add Route for Services */}
+          <Route path="/ContactUs" element={<ContactUs />} /> 
+          <Route path="/AboutUs" element={<AboutUs />} />{/* Add Route for Services */}
           <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
 
 

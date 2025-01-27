@@ -32,7 +32,8 @@ function Navigation() {
         <li><Link to="/shipments" onClick={toggleMenu}>Shipments</Link></li>
         <li><Link to="/tracking" onClick={toggleMenu}>Tracking</Link></li>
         <li><Link to="/services" onClick={toggleMenu}>Services</Link></li>
-        <li><Link to="/ContactUs" onClick={toggleMenu}>ContactUs</Link></li>
+        <li><Link to="/ContactUs" onClick={toggleMenu}>Contact Us</Link></li>
+        <li><Link to="/AboutUs" onClick={toggleMenu}>About Us</Link></li>
         <li><Link to="/PrivacyPolicy" onClick={toggleMenu}>Privacy Policy</Link></li>
       </ul>
     </nav>

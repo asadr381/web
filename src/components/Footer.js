@@ -1,27 +1,20 @@
 import React from 'react';
 import './Footer.css';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer-content">
+      <div className="footer-container">
         <div className="footer-section about">
-          <p4>About Us</p4>
+          <h3>About Us</h3>
           <p>
-          As a global leader in logistics, UPS guaranteed on-time package and freight shipments are just a few of the many deliveries 
-that we make every business day. We also deliver:
-• Extensive knowledge and experience from the world’s largest package delivery company to keep you competitive in a 
-rapidly expanding international marketplace.
-• Customised solutions and reliable services for shipping, tracking and billing from a global leader in technology to drive 
-greater efficiency, helping to save you time and reduce costs.
-• Sustainable shipping options from one of the most efficient global transportation networks in the world to help reduce 
-carbon emissions and conserve resources.
-All of this helps make the best delivery of all possible — your satisfaction and, most importantly, your customers’ 
-satisfaction. When that’s delivered, we know we’ve done our job
+           Universal Logistics Services (ULS), an authorized service contractor for UPS in Pakistan, is a trusted leader in global logistics. We ensure secure and timely deliveries while providing innovative solutions that enhance efficiency, reduce costs, and elevate customer satisfaction.
           </p>
         </div>
+        
         <div className="footer-section links">
-          <p>Quick Links</p>
+          <h3>Quick Links</h3>
           <ul>
             <li><a href="/about">About Us</a></li>
             <li><a href="/services">Services</a></li>
@@ -29,18 +22,17 @@ satisfaction. When that’s delivered, we know we’ve done our job
             <li><a href="/privacy-policy">Privacy Policy</a></li>
           </ul>
         </div>
+
         <div className="footer-section contact">
-       
-          <p>For bookings and enquiries</p>
-          <p>Tel: 021-111-669-877</p>
-          <p>UAN: 021-111-NOW-UPS</p>
-          <p1>Universal Logistics Service (Pvt.) Ltd.
-Authorized Service Contractor for UPS
-D - 79, Kehkashan Clifton
-Block - 5, Karachi - Pakistan
-Telephone: +92-21-35148129-31
-Customer Services: +92-21-111-669-877
-Email: pkcustsvc@ups.com</p1>
+          <h3>Contact Us</h3>
+          <p><FaPhone /> 021-111-669-877</p>
+          <p><FaEnvelope /> pkcustsvc@ups.com</p>
+          <p><FaMapMarkerAlt /> D-79, Kehkashan Clifton, Karachi, Pakistan</p>
+          <div className="social-icons">
+            <a href="#"><FaFacebook /></a>
+            <a href="#"><FaTwitter /></a>
+            <a href="#"><FaLinkedin /></a>
+          </div>
         </div>
       </div>
       <div className="footer-bottom">

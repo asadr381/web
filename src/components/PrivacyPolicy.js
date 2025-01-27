@@ -4,7 +4,7 @@ import './PrivacyPolicy.css';
 function PrivacyPolicy() {
   return (
     <div className="privacy-policy">
-      <h2>Privacy Policy</h2>
+      <h1>Privacy Policy</h1>
       <p>Last updated: January 24, 2025</p>
       
       <section>

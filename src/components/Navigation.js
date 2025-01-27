@@ -18,7 +18,7 @@ function Navigation() {
           <img src={logo} alt="Logo" />
         </Link>
       </div>
-      <h4 style={{ color: 'white', alignContent: 'center' }}>UPS Authorised Service Contractor Pakistan </h4>
+      <h4 style={{ color: 'white', alignContent: 'center' }}>Universal Logistics Services <br></br>UPS Authorised Service Contractor <br></br>Pakistan </h4>
       
       
       {/* Hamburger Menu on the Right */}

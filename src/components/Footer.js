@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.css';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const Footer = () => {
   return (
@@ -9,17 +10,17 @@ const Footer = () => {
         <div className="footer-section about">
           <h3>About Us</h3>
           <p>
-           Universal Logistics Services (ULS), an authorized service contractor for UPS in Pakistan, is a trusted leader in global logistics. We ensure secure and timely deliveries while providing innovative solutions that enhance efficiency, reduce costs, and elevate customer satisfaction.
+          Universal Logistics Services (ULS), owned by the Akbar Group, is a renowned leader in global logistics and an authorized service contractor for UPS in Pakistan. With a focus on secure and timely deliveries, ULS offers innovative solutions designed to enhance operational efficiency, lower costs, and significantly improve customer satisfaction.
           </p>
         </div>
         
         <div className="footer-section links">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><Link to="/aboutus">About Us</Link></li> {/* Updated to Link */}
+            <li><Link to="/services">Services</Link></li>
+            <li><Link to="/contactus">Contact</Link></li>
+            <li><Link to="/privacypolicy">Privacy Policy</Link></li>
           </ul>
         </div>
 
@@ -29,9 +30,9 @@ const Footer = () => {
           <p><FaEnvelope /> pkcustsvc@ups.com</p>
           <p><FaMapMarkerAlt /> D-79, Kehkashan Clifton, Karachi, Pakistan</p>
           <div className="social-icons">
-            <a href="#"><FaFacebook /></a>
-            <a href="#"><FaTwitter /></a>
-            <a href="#"><FaLinkedin /></a>
+
+        
+            <a href="https://www.linkedin.com/company/upspakistanasc/"><FaLinkedin /></a>
           </div>
         </div>
       </div>

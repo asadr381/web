@@ -19,6 +19,9 @@ const AboutUs = () => {
           The Akbar Group is a diverse group of companies with extensive experience in the aviation industry as well as 
           being responsible for successfully introducing several high-profile global brands in Pakistan.
         </p>
+        <p>
+        Universal Logistics Services (ULS), owned by the Akbar Group, is a renowned leader in global logistics and an authorized service contractor for UPS in Pakistan. With a focus on secure and timely deliveries, ULS offers innovative solutions designed to enhance operational efficiency, lower costs, and significantly improve customer satisfaction.
+        </p>
       </div>
 
       {/* Office Cards Section */}
@@ -92,7 +95,7 @@ const AboutUs = () => {
           <div className="card-text">
             <p>
               The Group represents UPS as their authorized service contractor for special & government projects in Pakistan, 
-              since 2002.
+              since 2004.
             </p>
           </div>
         </motion.div>

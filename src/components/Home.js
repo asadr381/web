@@ -9,6 +9,7 @@ import sialkot from '../img/sialkot.jpg';
 import karachi from '../img/karachi.JPG'; // Your small business image
 import { Link } from 'react-router-dom';
 import vision from '../img/vision.PNG';
+import isb from '../img/isb.jpg';
 function Home() {
   return (
     <div className="home-container">
@@ -144,7 +145,7 @@ function Home() {
     transition={{ duration: 1, delay: 0.5 }}
   >
     <img src={karachi} alt="Office Location 1" />
-    <h3>Karachi Office</h3>
+    <h3>Karachi</h3>
     <p>Universal Logistics Service (Pvt.) Ltd.
 Authorized Service Contractor for UPS
 D - 79, Kehkashan Clifton
@@ -163,9 +164,9 @@ Customer Services: +92-21-111-669-877</p>
     transition={{ duration: 1, delay: 0.7 }}
   >
     <img src={lahore} alt="Office Location 2" />
-    <h3>Lahore Office</h3>
-    <p>Address: ABC Road, Lahore, Pakistan</p>
-    <p>Phone: +92 321 7654321</p>
+    <h3>Lahore</h3>
+    <p>204 Uper Mall, Lahore, Pakistan</p>
+    <p>Customer Services: 021-111-669-877</p>
   </motion.div>
 
   {/* Office 3 */}
@@ -176,11 +177,27 @@ Customer Services: +92-21-111-669-877</p>
     transition={{ duration: 1, delay: 0.9 }}
   >
     <img src={sialkot} alt="Office Location 3" />
-    <h3>Sialkot Office</h3>
+    <h3>Sialkot</h3>
     <p>Chowk Anwar Khawaja Monument, Haji Pura Road Near, Faysal Bank Sialkot </p>
     <p>Telephone: +92-52-3556447 TEL: +92-52-3556344</p>
    
   </motion.div>
+
+  <motion.div 
+    className="office-card"
+    initial={{ opacity: 0, x: 100 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 1, delay: 0.9 }}
+  >
+    <img src={isb} alt="Office Location 3" />
+    <h3>Islamabad</h3>
+    <p>Plot#3, Faqeer Aipee Road, i-11/2, Islamabad</p>
+    <p>Customer Services: 021-111-669-877</p>
+   
+  </motion.div>
+
+
+
 </motion.div>
 <h1 style={{ color: '#351c15' }}>OUR VISION</h1>
         <motion.img
@@ -192,7 +209,24 @@ Customer Services: +92-21-111-669-877</p>
             transition={{ duration: 1, delay: 0.5 }}
             style={{ width: '100%', borderRadius: '8px' }}
           />
-
+ <motion.div 
+        className="whatsapp-widget"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        style={{
+          position: 'fixed',
+          bottom: '20px',
+          right: '20px',
+          backgroundColor: '#25d366',
+          borderRadius: '50%',
+          padding: '15px',
+          cursor: 'pointer',
+        }}
+      >
+        <a href="https://wa.me/92021111669877" target="_blank" rel="noopener noreferrer">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style={{ width: '40px', height: '40px' }} />
+        </a>
+      </motion.div>
       </div>
       
     </div>

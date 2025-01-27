@@ -99,10 +99,10 @@ ul {
   padding: 0;
 }
 
-ul li {
+.card-details ul li {
   font-size: 1rem;
   line-height: 1.6;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 0.8rem;
 }
 
@@ -113,7 +113,7 @@ ul li {
   }
 
   .card {
-    width: 90%;
+    width: 100%;
     margin-bottom: 2rem;
   }
 }

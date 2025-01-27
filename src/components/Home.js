@@ -8,6 +8,7 @@ import lahore from '../img/lahore.jpg';
 import sialkot from '../img/sialkot.jpg';
 import karachi from '../img/karachi.JPG'; // Your small business image
 import { Link } from 'react-router-dom';
+import vision from '../img/vision.PNG';
 function Home() {
   return (
     <div className="home-container">
@@ -181,7 +182,16 @@ Customer Services: +92-21-111-669-877</p>
    
   </motion.div>
 </motion.div>
-
+<h1 style={{ color: '#351c15' }}>OUR VISION</h1>
+        <motion.img
+            src={vision}
+            alt="Business Growth"
+            className="hero-image"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            style={{ width: '100%', borderRadius: '8px' }}
+          />
 
       </div>
       

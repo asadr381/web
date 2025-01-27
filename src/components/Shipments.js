@@ -13,13 +13,13 @@ function Shipments() {
     email_id: "",
     mobile_no: "",
     status: "Open",
-    custom_lead_type: "",  // Export/Import
-    request_type: "",  // Product Enquiry, Request for Information, Suggestions, Other
-    custom_request_details: "",  // Additional details
+    custom_lead_type: "",  // Export/Import // Product Enquiry, Request for Information, Suggestions, Other
+    custom_request_details: "", 
+    custom_request_type2: "", // Additional details
   });
   const [message, setMessage] = useState("");  // To show success or error message
   const [messageType, setMessageType] = useState(""); // To track message type (success or error)
-
+  const [customRequestType2, setCustomRequestType2] = useState('');
   // Handle input changes
   const handleChange = (e) => {
     setFormData({
@@ -120,21 +120,36 @@ function Shipments() {
           </div>
 
           {/* New Field: Request Type */}
-          <div className="form-group">
-            <label>Request Type:</label>
-            <select
-              name="request_type"
-              value={formData.request_type}
-              onChange={handleChange}
-              required
-            >
-              <option value="">Select Request Type</option>
-              <option value="Product Enquiry">Product Enquiry</option>
-              <option value="Request for Information">Request for Information</option>
-              <option value="Suggestions">Suggestions</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
+
+
+
+
+
+          
+ {/* Other form fields */}
+
+      {/* Custom Request Type 2 Dropdown */}
+      <div className="form-group">
+        <label htmlFor="custom_request_type2">Request Type</label>
+        <select
+  id="custom_request_type2"
+  name="custom_request_type2"
+  value={formData.custom_request_type2}
+  onChange={handleChange}
+  required
+>
+  <option value="">Select an option</option>
+  <option value="Rate Inquiry">Rate Inquiry</option>
+  <option value="Transit Time">Transit Time</option>
+  <option value="Customs Requirements / Paper Work">Customs Requirements / Paper Work</option>
+  <option value="Destination">Destination</option>
+  <option value="Commodity Information">Commodity Information</option>
+  <option value="Product Inquiry">Product Inquiry</option>
+</select>
+      </div>
+
+
+
 
           {/* New Field: Custom Request Details */}
           <div className="form-group">

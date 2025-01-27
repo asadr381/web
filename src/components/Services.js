@@ -4,57 +4,54 @@ import './Services.css';
 function Services() {
   return (
     <div className="services">
-      <h2>Our Services</h2>
+      <h2>Our UPS Shipping Solutions</h2>
       <p className="service-intro">
         We offer a range of UPS shipping solutions tailored to meet your delivery needs.
       </p>
 
       <div className="service-cards">
-        {/* UPS Express Plus */}
+        {/* EXPORT SERVICES */}
         <div className="card">
           <div className="card-content">
-            <h3>UPS Express Plus</h3>
-            <p>Fastest morning delivery for your urgent shipments. Ensures delivery as early as 8 AM to select locations.</p>
-          </div>
-        </div>
-
-        {/* UPS Express */}
-        <div className="card">
-          <div className="card-content">
-            <h3>UPS Express</h3>
-            <p>Guaranteed delivery by midday or end of the day, ensuring quick and secure global shipping.</p>
-          </div>
-        </div>
-
-        {/* UPS Express Saver */}
-        <div className="card">
-          <div className="card-content">
-            <h3>UPS Express Saver</h3>
-            <p>Affordable express shipping with next-day delivery in major cities and quick transit to international locations.</p>
-          </div>
-        </div>
-
-        {/* UPS Expedited */}
-        <div className="card">
-          <div className="card-content">
-            <h3>UPS Expedited</h3>
+            <h3>EXPORT SERVICES</h3>
             <p>Cost-effective international shipping for less time-sensitive shipments, ensuring reliable door-to-door delivery.</p>
+            <div className="card-details">
+              <ul>
+                <li><strong>UPS Worldwide Express Plus:</strong> Delivery by 8:30 a.m./9:00 a.m., Coverage to 58 Countries & Territories, Max Weight: 70 Kg</li>
+                <li><strong>UPS Worldwide Express:</strong> Delivery by 10:30 a.m./12:00 p.m., Coverage to 136 Countries & Territories, Max Weight: 70 Kg</li>
+                <li><strong>UPS Worldwide Express Freight:</strong> End of Day delivery, Coverage to 81 Countries & Territories, Max Weight: 70 Kg</li>
+                <li><strong>UPS Worldwide Express Saver:</strong> End of Day delivery, Coverage to 225+ Countries & Territories, Max Weight: 70 Kg</li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        {/* Freight Shipping */}
+        {/* IMPORT SERVICES */}
         <div className="card">
           <div className="card-content">
-            <h3>Freight Shipping</h3>
+            <h3>IMPORT SERVICES</h3>
             <p>Large-scale freight shipping solutions, including air, ocean, and ground freight for bulk shipments.</p>
+            <div className="card-details">
+              <ul>
+                <li><strong>UPS Worldwide Express Plus:</strong> Delivery by 10:30 a.m./12:00 p.m., End of Next Possible Business Day, Max Weight: 70 Kg</li>
+                <li><strong>UPS Worldwide Express Saver:</strong> Delivery by Next or Second Business Day, Max Weight: 70 Kg</li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        {/* Customs Clearance */}
+        {/* UPS BROKERAGE SERVICE */}
         <div className="card">
           <div className="card-content">
-            <h3>Customs Clearance</h3>
+            <h3>UPS Brokerage Service</h3>
             <p>Expert customs brokerage services to ensure your shipments move smoothly across borders.</p>
+            <div className="card-details">
+              <ul>
+                <li>Customs services in over 120 countries, managing trade and compliance practices on your behalf.</li>
+                <li>UPS handles customs documentation, including proof of payment, bill of entry, and more.</li>
+                <li>Comprehensive import services, including code renewals, temporary clearance, and denied party screening.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

@@ -14,13 +14,14 @@ const AboutUs = () => {
     <div className="about-us-container">
       {/* Akbar Group Journey Text */}
       <div className="journey-section">
-        <h2>AKBAR GROUP JOURNEY</h2>
+        <h2>AKBAR GROUP</h2>
+        
+        <p>
+        Universal Logistics Services (ULS), owned by the Akbar Group, is a renowned leader in global logistics and an authorized service contractor for UPS in Pakistan. With a focus on secure and timely deliveries, ULS offers innovative solutions designed to enhance operational efficiency, lower costs, and significantly improve customer satisfaction.
+        </p>
         <p>
           The Akbar Group is a diverse group of companies with extensive experience in the aviation industry as well as 
           being responsible for successfully introducing several high-profile global brands in Pakistan.
-        </p>
-        <p>
-        Universal Logistics Services (ULS), owned by the Akbar Group, is a renowned leader in global logistics and an authorized service contractor for UPS in Pakistan. With a focus on secure and timely deliveries, ULS offers innovative solutions designed to enhance operational efficiency, lower costs, and significantly improve customer satisfaction.
         </p>
       </div>
 

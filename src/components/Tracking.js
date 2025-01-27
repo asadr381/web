@@ -26,7 +26,7 @@ const ShipmentDetails = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const apiBaseUrl = 'https://excel-api-0x2r.onrender.com/track/';  // New API URL
+  const apiBaseUrl = 'https://excel-api-0x2r.onrender.com/track/';  
 
   const handleTrackShipment = async () => {
     if (!trackingNumber) {
@@ -130,6 +130,20 @@ const ShipmentDetails = () => {
         <div><strong>Weight:</strong> {shipmentDetails.weight}</div>
         <div><strong>Service:</strong> {shipmentDetails.service}</div>
       </div>
+
+      {/* Detailed View Button */}
+      {shipmentDetails.number && (
+        <div className="detailed-view-container">
+          <a 
+            href={`https://tracking.ulspk.com/shipment-details?trackingNumber=${shipmentDetails.number}`} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="detailed-view-button"
+          >
+            Detailed View
+          </a>
+        </div>
+      )}
 
       {/* Loading Popup */}
       {loading && (

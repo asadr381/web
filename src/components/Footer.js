@@ -28,7 +28,7 @@ const Footer = () => {
           <h3>Contact Us</h3>
           <p><FaPhone /> Call Center: 021-111-669-877</p>
           <p><FaEnvelope /> pkcustsvc@ups.com</p>
-          <p><FaMapMarkerAlt /> D-79, Kehkashan Clifton, Karachi, Pakistan</p>
+          <p><FaMapMarkerAlt /> D-79, Kehkashan Clifton Block-5, Karachi, Pakistan</p>
           <div className="social-icons">
 
         

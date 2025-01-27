@@ -145,17 +145,8 @@ function Home() {
     transition={{ duration: 1, delay: 0.5 }}
   >
     <img src={karachi} alt="Office Location 1" />
-    <h3>Karachi Head Office</h3>
-    <p>Universal Logistics Service (Pvt.) Ltd.
-Authorized Service Contractor for UPS
-D - 79, Kehkashan Clifton
-Block - 5, Karachi - Pakistan</p>
-
-<p>Email: pkcustsvc@ups.com</p>
-<p>Telephone: +92-21-35148129-31
-Customer Services: +92-21-111-669-877</p>
-<h3>Service Center</h3>
-<p>E15 Block 6 PECHS Nursery, Shah-re-Faisal</p>
+    <h3>Karachi</h3>
+<p>E15 Block 6 PECHS Nursery, Shahrah-e-Faisal</p>
 <p>Telephone: +92-21-34521187
 Customer Services: +92-21-134371041</p>
   
@@ -184,7 +175,7 @@ Customer Services: +92-21-134371041</p>
     <img src={sialkot} alt="Office Location 3" />
     <h3>Sialkot</h3>
     <p>Chowk Anwar Khawaja Monument, Haji Pura Road Near, Faysal Bank Sialkot </p>
-    <p>Telephone: +92-52-3556447 TEL: +92-52-3556344</p>
+    <p>Telephone: +92-52-3556447 Customer Services: +92-52-3556344</p>
    
   </motion.div>
 

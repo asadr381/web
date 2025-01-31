@@ -155,7 +155,7 @@ function Home() {
 <p><FaPhoneAlt /> (0092) 21-34521187  <FaHeadset /> (0092) 21-134371041</p>
 
 
-<a href="https://about.ups.com/us/en/our-stories/customer-first/small-business-big-growth.html" target="_blank" rel="noopener noreferrer">
+<a href="https://www.google.com/maps?q=24.8596337,67.0657547" target="_blank" rel="noopener noreferrer">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -179,7 +179,7 @@ function Home() {
     <p>204- Scotch Corner, Uper Mall<br></br> Lahore, Pakistan</p>
     <p><FaPhoneAlt /> (0092) 42-35753888, 35754666</p>
 
-    <a href="https://about.ups.com/us/en/our-stories/customer-first/small-business-big-growth.html" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.google.com/maps?q=31.543372414055295,74.35411971970743" target="_blank" rel="noopener noreferrer">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -202,7 +202,7 @@ function Home() {
     <h3>Sialkot</h3>
     <p>Chowk Anwar Khawaja Monument, Haji Pura Road Near, Faysal Bank, Sialkot, Pakistan </p>
     <p><FaPhoneAlt /> (0092) 52-3556447, 3556344</p>
-    <a href="https://about.ups.com/us/en/our-stories/customer-first/small-business-big-growth.html" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.google.com/maps?q=32.473460674551234,74.51881949317858" target="_blank" rel="noopener noreferrer">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -224,7 +224,7 @@ function Home() {
     <h3>Islamabad</h3>
     <p>Plot#3, Faqeer Aipee Road, i-11/2, <br></br>Islamabad, Pakistan</p>
     <p><FaPhoneAlt /> (0092) 51-8733361-62, 4863971-72</p>
-    <a href="https://about.ups.com/us/en/our-stories/customer-first/small-business-big-growth.html" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.google.com/maps?q=33.643544744771546,73.02197573414695" target="_blank" rel="noopener noreferrer">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -245,7 +245,7 @@ function Home() {
     <h3>Peshawar</h3>
     <p>MDF 23, Namal Palaza Khyber Super Market, Bara Road, Near Qayyum Stadium</p>
     <p>Customer Services: 021-111-669-877</p>
-    <a href="https://about.ups.com/us/en/our-stories/customer-first/small-business-big-growth.html" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.google.com/maps?q=33.98999008689488,71.53431641136997" target="_blank" rel="noopener noreferrer">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -270,7 +270,7 @@ function Home() {
     <p>Office No. 13 Regency Int. 949, The Mall, Near Best Western Hotel, OPP PIA Office</p>
     <p><FaPhoneAlt /> (0092) 52-3556344, 3556347</p>
 
-    <a href="https://about.ups.com/us/en/our-stories/customer-first/small-business-big-growth.html" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.google.com/maps?q=31.42243233736654,73.08960740199518" target="_blank" rel="noopener noreferrer">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}

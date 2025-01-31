@@ -10,6 +10,11 @@ import karachi from '../img/karachi.JPG'; // Your small business image
 import { Link } from 'react-router-dom';
 import vision from '../img/vision.PNG';
 import isb from '../img/isb.jpg';
+import { FaPhoneAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaHeadset } from "react-icons/fa";
+import fsd from '../img/fsd.jpg';
+import pess from '../img/pess.jpg';
 function Home() {
   return (
     <div className="home-container">
@@ -146,10 +151,20 @@ function Home() {
   >
     <img src={karachi} alt="Office Location 1" />
     <h3>Karachi</h3>
-<p>E15 Block 6 PECHS Nursery, Shahrah-e-Faisal</p>
-<p>Telephone: +92-21-34521187
-Customer Services: +92-21-134371041</p>
-  
+<p>E15 Block 6 PECHS Nursery, Shahrah-e-Faisal<br></br> Karachi, Pakistan</p>
+<p><FaPhoneAlt /> (0092) 21-34521187  <FaHeadset /> (0092) 21-134371041</p>
+
+
+<a href="https://about.ups.com/us/en/our-stories/customer-first/small-business-big-growth.html" target="_blank" rel="noopener noreferrer">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="cta-button"
+                style={{ padding: '10px 20px', backgroundColor: '#ffc400', color: 'black', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+              >
+                <FaMapMarkerAlt />Location
+              </motion.button>
+            </a>
   </motion.div>
 
   {/* Office 2 */}
@@ -161,8 +176,19 @@ Customer Services: +92-21-134371041</p>
   >
     <img src={lahore} alt="Office Location 2" />
     <h3>Lahore</h3>
-    <p>204 Uper Mall, Lahore, Pakistan</p>
-    <p>Customer Services: 021-111-669-877</p>
+    <p>204- Scotch Corner, Uper Mall<br></br> Lahore, Pakistan</p>
+    <p><FaPhoneAlt /> (0092) 42-35753888, 35754666</p>
+
+    <a href="https://about.ups.com/us/en/our-stories/customer-first/small-business-big-growth.html" target="_blank" rel="noopener noreferrer">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="cta-button"
+                style={{ padding: '10px 20px', backgroundColor: '#ffc400', color: 'black', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+              >
+                <FaMapMarkerAlt />Location
+              </motion.button>
+            </a>
   </motion.div>
 
   {/* Office 3 */}
@@ -174,9 +200,18 @@ Customer Services: +92-21-134371041</p>
   >
     <img src={sialkot} alt="Office Location 3" />
     <h3>Sialkot</h3>
-    <p>Chowk Anwar Khawaja Monument, Haji Pura Road Near, Faysal Bank Sialkot </p>
-    <p>Telephone: +92-52-3556447 Customer Services: +92-52-3556344</p>
-   
+    <p>Chowk Anwar Khawaja Monument, Haji Pura Road Near, Faysal Bank, Sialkot, Pakistan </p>
+    <p><FaPhoneAlt /> (0092) 52-3556447, 3556344</p>
+    <a href="https://about.ups.com/us/en/our-stories/customer-first/small-business-big-growth.html" target="_blank" rel="noopener noreferrer">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="cta-button"
+                style={{ padding: '10px 20px', backgroundColor: '#ffc400', color: 'black', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+              >
+                <FaMapMarkerAlt />Location
+              </motion.button>
+            </a>
   </motion.div>
 
   <motion.div 
@@ -187,10 +222,90 @@ Customer Services: +92-21-134371041</p>
   >
     <img src={isb} alt="Office Location 3" />
     <h3>Islamabad</h3>
-    <p>Plot#3, Faqeer Aipee Road, i-11/2, Islamabad</p>
-    <p>Customer Services: 021-111-669-877</p>
-   
+    <p>Plot#3, Faqeer Aipee Road, i-11/2, <br></br>Islamabad, Pakistan</p>
+    <p><FaPhoneAlt /> (0092) 51-8733361-62, 4863971-72</p>
+    <a href="https://about.ups.com/us/en/our-stories/customer-first/small-business-big-growth.html" target="_blank" rel="noopener noreferrer">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="cta-button"
+                style={{ padding: '10px 20px', backgroundColor: '#ffc400', color: 'black', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+              >
+                <FaMapMarkerAlt />Location
+              </motion.button>
+            </a>
   </motion.div>
+  <motion.div 
+    className="office-card"
+    initial={{ opacity: 0, x: 100 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 1, delay: 0.9 }}
+  >
+    <img src={pess} alt="Office Location 3" />
+    <h3>Peshawar</h3>
+    <p>MDF 23, Namal Palaza Khyber Super Market, Bara Road, Near Qayyum Stadium</p>
+    <p>Customer Services: 021-111-669-877</p>
+    <a href="https://about.ups.com/us/en/our-stories/customer-first/small-business-big-growth.html" target="_blank" rel="noopener noreferrer">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="cta-button"
+                style={{ padding: '10px 20px', backgroundColor: '#ffc400', color: 'black', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+              >
+                <FaMapMarkerAlt />Location
+              </motion.button>
+            </a>
+  </motion.div>
+ 
+
+
+  <motion.div 
+    className="office-card"
+    initial={{ opacity: 0, x: 100 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 1, delay: 0.9 }}
+>
+    <img src={fsd} alt="Office Location 3" />
+    <h3>Faisalabad</h3>
+    <p>Office No. 13 Regency Int. 949, The Mall, Near Best Western Hotel, OPP PIA Office</p>
+    <p><FaPhoneAlt /> (0092) 52-3556344, 3556347</p>
+
+    <a href="https://about.ups.com/us/en/our-stories/customer-first/small-business-big-growth.html" target="_blank" rel="noopener noreferrer">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="cta-button"
+                style={{ padding: '10px 20px', backgroundColor: '#ffc400', color: 'black', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+              >
+                <FaMapMarkerAlt />Location
+              </motion.button>
+            </a>
+</motion.div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -223,6 +338,7 @@ Customer Services: +92-21-134371041</p>
           <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style={{ width: '40px', height: '40px' }} />
         </a>
       </motion.div>
+      
       </div>
       
     </div>

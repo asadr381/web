@@ -13,13 +13,73 @@ function Navigation() {
   return (
     <nav className="navbar">
       {/* Logo on the Left */}
-      <div className="logo">
-        <Link to="/">
-          <img src={logo} alt="Logo" />
-        </Link>
-      </div>
-      <h4 style={{ color: 'white', alignContent: 'center' }}>Universal Logistics Services <br></br>UPS Authorised Service Contractor <br></br>Pakistan </h4>
-      
+
+
+
+      <div style={{ 
+      display: 'flex', 
+      alignItems: 'center', 
+      gap: '16px' 
+    }}>
+      {/* Logo */}
+      <Link to="/" style={{ textDecoration: 'none' }}>
+        <img 
+          src={logo} 
+          alt="Logo"
+          style={{ width: '160px', height: '100px' }} 
+        />
+      </Link>
+
+      {/* Text */}
+      <h4 style={{ 
+        color: 'white', 
+        textAlign: 'center', 
+        display: 'flex', 
+        flexDirection: 'column', 
+        justifyContent: 'center', 
+        margin: 0 
+      }}>
+        <span 
+          style={{ 
+            fontSize: '22px', 
+            fontWeight: 'bold' 
+          }}
+          className="header-text"
+        >
+          Universal Logistics Services
+        </span>
+        <span 
+          style={{ fontSize: '16px' }} 
+          className="service-contractor"
+        >
+          UPS Authorised Service Contractor
+        </span>
+        <span 
+          style={{ fontSize: '16px' }} 
+          className="service-contractors"
+        >
+          Pakistan
+        </span>
+      </h4>
+
+      {/* Inline CSS for Media Query */}
+      <style>
+        {`
+          @media (max-width: 768px) {
+            .header-text {
+              font-size: 14px !important; /* Keep this text larger in mobile view */
+            }
+            .service-contractor {
+              font-size: 8px !important; /* Make this text smaller on mobile */
+            }
+            .service-contractors {
+              font-size: 8px !important; /* Make this text smaller on mobile */
+            }
+           
+          }
+        `}
+      </style>
+    </div>
       
       {/* Hamburger Menu on the Right */}
       <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>

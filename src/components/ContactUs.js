@@ -129,7 +129,7 @@ function ContactUs() {
 
       {/* Query Form */}
       <div className='query-form'>
-        <h3>Submit a Query</h3>
+        <h3>Contact US</h3>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Name:</label>
@@ -186,7 +186,7 @@ function ContactUs() {
               required
             ></textarea>
           </div>
-          <button type="submit" className="submit-btn">Submit Query</button>
+          <button type="submit" className="submit-btn">Submit</button>
         </form>
       </div>
     </div>

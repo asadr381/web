@@ -141,7 +141,7 @@ function Shipments() {
               onChange={handleChange}
               required
             >
-              <option value="">Select Ticket Type</option>
+              <option value="">Select Request Type</option>
               {Object.entries(userFacingTicketTypeMap).map(([key, value]) => (
                 <option key={key} value={key}>{value}</option>
               ))}

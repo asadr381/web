@@ -153,7 +153,7 @@ function Shipments() {
 
       {/* Query Form */}
       <div className='query-form'>
-        <h3>Submit a Query</h3>
+
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Name:</label>

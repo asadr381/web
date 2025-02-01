@@ -3,9 +3,9 @@ import axios from 'axios';
 import './Shipments.css';
 
 // Frappe URL and API credentials
-const FRAPPE_URL = "https://ups-uat.sowaanerp.com";  // Frappe server URL
-const API_KEY = "a660048fb475f8f";  
-const API_SECRET = "aa12d7443a0604b";  
+const FRAPPE_URL = "https://ups.sowaanerp.com";
+const API_KEY = "7f9ceafe1f9cb28";
+const API_SECRET = "107d1e30c242a6f";  
 
 // User-facing ticket type mapping (without "Whatsapp")
 const userFacingTicketTypeMap = {
@@ -31,7 +31,7 @@ const apiFacingTicketTypeMap = {
 function Shipments() {
   const [formData, setFormData] = useState({
     custom_customer_name: "",
-    subject: "General Query",
+    subject: "Website General Query",
     raised_by: "mraza@ups.com",
     agent_group: "TeleSales",
     custom_employee: "EMP603",
@@ -77,13 +77,13 @@ function Shipments() {
           },
         }
       );
-      setMessage("✅ Your ticket has been submitted successfully!");
+      setMessage("✅ Your request has been submitted successfully!");
       setMessageType("success");
-      console.log("✅ Your Ticket Has Been Submitted successfully:", response.data);
+      console.log("✅ Your request Has Been Submitted successfully:", response.data);
     } catch (error) {
-      setMessage("❌ Failed to create ticket. Please try again.");
+      setMessage("❌ Failed to create request. Please try again.");
       setMessageType("error");
-      console.error("❌ Failed to create ticket:", error.response?.data || error.message);
+      console.error("❌ Failed to create request:", error.response?.data || error.message);
     }
   };
 
@@ -104,7 +104,7 @@ function Shipments() {
         <h3>Submit a Query</h3>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label>Customer Name:</label>
+            <label>Name:</label>
             <input
               type="text"
               name="custom_customer_name"
@@ -134,7 +134,7 @@ function Shipments() {
             />
           </div>
           <div className="form-group">
-            <label>Ticket Type:</label>
+            <label>Request Type:</label>
             <select
               name="ticket_type"
               value={formData.ticket_type}

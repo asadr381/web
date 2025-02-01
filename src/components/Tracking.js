@@ -134,7 +134,7 @@ const ShipmentDetails = () => {
       {/* Detailed View Button */}
       {shipmentDetails.number && (
         <div className="detailed-view-container">
-          <a 
+          <a  style={{ color: '#ffc400' }}
             href={`https://tracking.ulspk.com/shipment-details?trackingNumber=${shipmentDetails.number}`} 
             target="_blank" 
             rel="noopener noreferrer"

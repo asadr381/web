@@ -1,26 +1,96 @@
-import React, { useState } from "react";
 import { FaEnvelope, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
-import "./contact.css"; // Importing the CSS file
 
-const ContactUs = () => {
+import React, { useState } from 'react';
+import axios from 'axios';
+import './Shipments.css';
+
+// Frappe URL and API credentials
+const FRAPPE_URL = "https://ups.sowaanerp.com";
+const API_KEY = "7f9ceafe1f9cb28";
+const API_SECRET = "107d1e30c242a6f";  
+
+// User-facing ticket type mapping (without "Whatsapp")
+const userFacingTicketTypeMap = {
+  "1": "Commodity Information",
+  "2": "Customs Requirements / Paper Work",
+  "3": "Product Inquiry",
+  "4": "Rate Inquiry",
+  "5": "Transit Time",
+  "6": "Corporate / Business Account "
+};
+
+// API-facing ticket type mapping (with "Whatsapp")
+const apiFacingTicketTypeMap = {
+  "1": "Commodity Information Whatsapp",
+  "2": "Customs Requirements / Paper Work Whatsapp",
+  "3": "Product Inquiry Whatsapp",
+  "4": "Rate Inquiry Whatsapp",
+  "5": "Transit Time Whatsapp",
+  "6": "Corporate / Business Account Whatsapp"
+
+};
+
+function ContactUs() {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
+    custom_customer_name: "",
+    subject: "Website General Query",
+    raised_by: "mraza@ups.com",
+    agent_group: "TeleSales",
+    custom_employee: "EMP603",
+    ticket_type: "",
+    description: "",
+    custom_customer_email_address: "",
+    custom_customer_contact_number: ""
   });
+  const [message, setMessage] = useState("");  // To show success or error message
+  const [messageType, setMessageType] = useState(""); // To track message type (success or error)
 
+  // Handle input changes
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
-  const handleSubmit = (e) => {
+  // Handle form submission
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const mailtoLink = `mailto:pkcustsvc@ups.com?subject=Contact Form Submission from ${formData.name}&body=${formData.message}%0A%0AReply to: ${formData.email}`;
-    window.location.href = mailtoLink;
+    createTicket();
+  };
+
+  // Create Ticket function with API Key authentication
+  const createTicket = async () => {
+    try {
+      // Map the selected ticket type key to the API-facing value
+      const formattedTicketType = apiFacingTicketTypeMap[formData.ticket_type];
+      const payload = {
+        ...formData,
+        ticket_type: formattedTicketType
+      };
+
+      const response = await axios.post(
+        `${FRAPPE_URL}/api/resource/HD%20Ticket`,
+        { doctype: "Ticket", ...payload },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `token ${API_KEY}:${API_SECRET}`,  // API Key Authentication
+          },
+        }
+      );
+      setMessage("✅ Your request has been submitted successfully!");
+      setMessageType("success");
+      console.log("✅ Your request Has Been Submitted successfully:", response.data);
+    } catch (error) {
+      setMessage("❌ Failed to create request. Please try again.");
+      setMessageType("error");
+      console.error("❌ Failed to create request:", error.response?.data || error.message);
+    }
   };
 
   return (
-    <div className="contact-container">
+    <div className="shipments">
       <div className="contact-box">
         <h2 className="contact-title">Contact Us</h2>
      
@@ -29,11 +99,11 @@ const ContactUs = () => {
         <div className="contact-details">
           <div>
             <FaEnvelope className="contact-icon" />
-            <a href="mailto:pkcustsvc@ups.com">pkcustsvc@ups.com</a>
+            <a  style={{ color: '#ffc400' }}href="mailto:pkcustsvc@ups.com">pkcustsvc@ups.com</a>
           </div>
           <div>
             <FaWhatsapp className="contact-icon" />
-            <a href="https://wa.me/92021111669877" target="_blank" rel="noopener noreferrer">
+            <a  style={{ color: '#ffc400' }} href="https://wa.me/92021111669877" target="_blank" rel="noopener noreferrer">
               +92 021 111 669 877
             </a>
           </div>
@@ -46,41 +116,81 @@ const ContactUs = () => {
         </div>
 
         {/* Contact Form */}
-        <form onSubmit={handleSubmit} className="contact-form">
-          <label>Your Name</label>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            placeholder="Enter your name"
-          />
+        
+      </div>
+     
 
-          <label>Your Email</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            placeholder="Enter your email"
-          />
+      {/* Success/Error Alert */}
+      {message && (
+        <div className={`alert ${messageType === "success" ? "alert-success" : "alert-error"}`}>
+          {message}
+        </div>
+      )}
 
-          <label>Your Message</label>
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            placeholder="Enter your message"
-          ></textarea>
-
-          <button type="submit">Send Message</button>
+      {/* Query Form */}
+      <div className='query-form'>
+        <h3>Submit a Query</h3>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label>Name:</label>
+            <input
+              type="text"
+              name="custom_customer_name"
+              value={formData.custom_customer_name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Email:</label>
+            <input
+              type="email"
+              name="custom_customer_email_address"
+              value={formData.custom_customer_email_address}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Mobile Number:</label>
+            <input
+              type="text"
+              name="custom_customer_contact_number"
+              value={formData.custom_customer_contact_number}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Request Type:</label>
+            <select
+              name="ticket_type"
+              value={formData.ticket_type}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select Ticket Type</option>
+              {Object.entries(userFacingTicketTypeMap).map(([key, value]) => (
+                <option key={key} value={key}>{value}</option>
+              ))}
+            </select>
+          </div>
+          <div className="form-group">
+            <label>Description:</label>
+            <textarea
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+              placeholder="Enter your query details..."
+              rows="4"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" className="submit-btn">Submit Query</button>
         </form>
       </div>
     </div>
   );
-};
+}
 
 export default ContactUs;

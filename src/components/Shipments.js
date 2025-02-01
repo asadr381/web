@@ -5,27 +5,30 @@ import './Shipments.css';
 // Frappe URL and API credentials
 const FRAPPE_URL = "https://ups.sowaanerp.com";
 const API_KEY = "7f9ceafe1f9cb28";
-const API_SECRET = "107d1e30c242a6f";  
+const API_SECRET = "107d1e30c242a6f";
 
 // User-facing ticket type mapping (without "Whatsapp")
 const userFacingTicketTypeMap = {
-  "1": "Commodity Information",
-  "2": "Customs Requirements / Paper Work",
-  "3": "Product Inquiry",
-  "4": "Rate Inquiry",
-  "5": "Transit Time",
-  "6": "Corporate / Business Account "
+
+  "1": "Product Inquiry",
+  "2": "Rate Inquiry",
+  "3": "Transit Time",
 };
 
 // API-facing ticket type mapping (with "Whatsapp")
 const apiFacingTicketTypeMap = {
-  "1": "Commodity Information Whatsapp",
-  "2": "Customs Requirements / Paper Work Whatsapp",
-  "3": "Product Inquiry Whatsapp",
-  "4": "Rate Inquiry Whatsapp",
-  "5": "Transit Time Whatsapp",
-  "6": "Corporate / Business Account Whatsapp"
 
+  "1": "Product Inquiry Whatsapp",
+  "2": "Rate Inquiry Whatsapp",
+  "3": "Transit Time Whatsapp",
+
+};
+
+// Shipment type mapping
+const shipmentTypeMap = {
+  "1": "Letter (0.5kg only)",
+  "2": "Document (0.5kg to 5kg only)",
+  "3": "Parcel (0.5kg to 70kg)"
 };
 
 function Shipments() {
@@ -38,9 +41,13 @@ function Shipments() {
     ticket_type: "",
     description: "",
     custom_customer_email_address: "",
-    custom_customer_contact_number: ""
+    custom_customer_contact_number: "",
+    shipmentFrom: "",
+    shipmentTo: "",
+    shipmentType: "",
+    weight: ""
   });
-  const [message, setMessage] = useState("");  // To show success or error message
+  const [message, setMessage] = useState(""); // To show success or error message
   const [messageType, setMessageType] = useState(""); // To track message type (success or error)
 
   // Handle input changes
@@ -51,9 +58,51 @@ function Shipments() {
     });
   };
 
+  // Validate email
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@(ups\.com|gmail\.com|yahoo\.com)$/i;
+    return emailRegex.test(email);
+  };
+
+  // Validate phone number
+  const isValidPhoneNumber = (phone) => {
+    const phoneRegex = /^\d{9,13}$/;
+    return phoneRegex.test(phone);
+  };
+
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validate email
+    if (!isValidEmail(formData.custom_customer_email_address)) {
+      setMessage("⚠️ Invalid email. Please enter a valid email ending with @ups.com, @gmail.com, or @yahoo.com.");
+      setMessageType("error");
+      return;
+    }
+
+    // Validate phone number
+    if (!isValidPhoneNumber(formData.custom_customer_contact_number)) {
+      setMessage("⚠️ Invalid phone number. Please enter a valid phone number (9 to 13 digits).");
+      setMessageType("error");
+      return;
+    }
+
+    // Validate shipment type
+    if (!shipmentTypeMap[formData.shipmentType]) {
+      setMessage("⚠️ Invalid shipment type. Please select a valid option.");
+      setMessageType("error");
+      return;
+    }
+
+    // Validate weight
+    if (isNaN(formData.weight) || formData.weight <= 0) {
+      setMessage("⚠️ Invalid weight. Please enter a valid weight in kg.");
+      setMessageType("error");
+      return;
+    }
+
+    // If all validations pass, create the ticket
     createTicket();
   };
 
@@ -62,9 +111,12 @@ function Shipments() {
     try {
       // Map the selected ticket type key to the API-facing value
       const formattedTicketType = apiFacingTicketTypeMap[formData.ticket_type];
+      const formattedShipmentType = shipmentTypeMap[formData.shipmentType] || formData.shipmentType;
+
       const payload = {
         ...formData,
-        ticket_type: formattedTicketType
+        ticket_type: formattedTicketType,
+        description: `Shipment From: ${formData.shipmentFrom}, Shipment To: ${formData.shipmentTo}, Weight: ${formData.weight}kg, Shipment Type: ${formattedShipmentType}`
       };
 
       const response = await axios.post(
@@ -73,7 +125,7 @@ function Shipments() {
         {
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `token ${API_KEY}:${API_SECRET}`,  // API Key Authentication
+            'Authorization': `token ${API_KEY}:${API_SECRET}`, // API Key Authentication
           },
         }
       );
@@ -129,6 +181,50 @@ function Shipments() {
               type="text"
               name="custom_customer_contact_number"
               value={formData.custom_customer_contact_number}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Shipment Country From:</label>
+            <input
+              type="text"
+              name="shipmentFrom"
+              value={formData.shipmentFrom}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Shipment Country To:</label>
+            <input
+              type="text"
+              name="shipmentTo"
+              value={formData.shipmentTo}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Shipment Type:</label>
+            <select
+              name="shipmentType"
+              value={formData.shipmentType}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select Shipment Type</option>
+              <option value="1">Letter (0.5kg only)</option>
+              <option value="2">Document (0.5kg to 5kg only)</option>
+              <option value="3">Parcel (0.5kg to 70kg)</option>
+            </select>
+          </div>
+          <div className="form-group">
+            <label>Shipment Weight (kg):</label>
+            <input
+              type="number"
+              name="weight"
+              value={formData.weight}
               onChange={handleChange}
               required
             />

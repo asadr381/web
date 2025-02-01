@@ -129,7 +129,7 @@ function ContactUs() {
 
       {/* Query Form */}
       <div className='query-form'>
-        <h3>Contact US</h3>
+
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Name:</label>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Tracking.css';
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const ShipmentDetails = () => {
   const [trackingNumber, setTrackingNumber] = useState('');
@@ -132,18 +133,7 @@ const ShipmentDetails = () => {
       </div>
 
       {/* Detailed View Button */}
-      {shipmentDetails.number && (
-        <div className="detailed-view-container">
-          <a  style={{ color: '#ffc400' }}
-            href={`https://tracking.ulspk.com/shipment-details?trackingNumber=${shipmentDetails.number}`} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="detailed-view-button"
-          >
-            Detailed View
-          </a>
-        </div>
-      )}
+    
 
       {/* Loading Popup */}
       {loading && (
@@ -152,7 +142,20 @@ const ShipmentDetails = () => {
           <p>Loading, please wait...</p>
         </div>
       )}
+        {shipmentDetails.number && (
+        <div className="detailed-view-container">
+         <button className="track-button"> <a  style={{ color: 'White' }}
+            href={`https://tracking.ulspk.com/shipment-details?trackingNumber=${shipmentDetails.number}`} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="detailed-view-button"
+          >
+           <FaExternalLinkAlt /> Detailed View
+          </a></button>
+        </div>
+      )}
     </div>
+    
   );
 };
 

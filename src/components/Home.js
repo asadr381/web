@@ -152,7 +152,7 @@ function Home() {
     <img src={karachi} alt="Office Location 1" />
     <h3>Karachi</h3>
 <p>E15 Block 6 PECHS Nursery, Shahrah-e-Faisal<br></br> Karachi, Pakistan</p>
-<p><FaPhoneAlt /> (0092) 21-34521187  <FaHeadset /> (0092) 21-134371041</p>
+<p><FaPhoneAlt /> (0092) 21-34521187  <FaHeadset /> (0092) 21-111669877</p>
 
 
 <a href="https://www.google.com/maps?q=24.8596337,67.0657547" target="_blank" rel="noopener noreferrer">

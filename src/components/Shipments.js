@@ -5,21 +5,44 @@ import './Shipments.css';
 // Frappe URL and API credentials
 const FRAPPE_URL = "https://ups-uat.sowaanerp.com";  // Frappe server URL
 const API_KEY = "a660048fb475f8f";  
-const API_SECRET = "15044e3bdf6d010";  
+const API_SECRET = "aa12d7443a0604b";  
+
+// User-facing ticket type mapping (without "Whatsapp")
+const userFacingTicketTypeMap = {
+  "1": "Commodity Information",
+  "2": "Customs Requirements / Paper Work",
+  "3": "Product Inquiry",
+  "4": "Rate Inquiry",
+  "5": "Transit Time",
+  "6": "Corporate / Business Account "
+};
+
+// API-facing ticket type mapping (with "Whatsapp")
+const apiFacingTicketTypeMap = {
+  "1": "Commodity Information Whatsapp",
+  "2": "Customs Requirements / Paper Work Whatsapp",
+  "3": "Product Inquiry Whatsapp",
+  "4": "Rate Inquiry Whatsapp",
+  "5": "Transit Time Whatsapp",
+  "6": "Corporate / Business Account Whatsapp"
+
+};
 
 function Shipments() {
   const [formData, setFormData] = useState({
-    lead_name: "",
-    email_id: "",
-    mobile_no: "",
-    status: "Open",
-    custom_lead_type: "",  // Export/Import // Product Enquiry, Request for Information, Suggestions, Other
-    custom_request_details: "", 
-    custom_request_type2: "", // Additional details
+    custom_customer_name: "",
+    subject: "General Query",
+    raised_by: "mraza@ups.com",
+    agent_group: "TeleSales",
+    custom_employee: "EMP603",
+    ticket_type: "",
+    description: "",
+    custom_customer_email_address: "",
+    custom_customer_contact_number: ""
   });
   const [message, setMessage] = useState("");  // To show success or error message
   const [messageType, setMessageType] = useState(""); // To track message type (success or error)
-  const [customRequestType2, setCustomRequestType2] = useState('');
+
   // Handle input changes
   const handleChange = (e) => {
     setFormData({
@@ -31,15 +54,22 @@ function Shipments() {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    createLead();
+    createTicket();
   };
 
-  // Create Lead function with API Key authentication
-  const createLead = async () => {
+  // Create Ticket function with API Key authentication
+  const createTicket = async () => {
     try {
+      // Map the selected ticket type key to the API-facing value
+      const formattedTicketType = apiFacingTicketTypeMap[formData.ticket_type];
+      const payload = {
+        ...formData,
+        ticket_type: formattedTicketType
+      };
+
       const response = await axios.post(
-        `${FRAPPE_URL}/api/resource/Lead`,
-        { doctype: "Lead", ...formData },
+        `${FRAPPE_URL}/api/resource/HD%20Ticket`,
+        { doctype: "Ticket", ...payload },
         {
           headers: {
             'Content-Type': 'application/json',
@@ -47,20 +77,20 @@ function Shipments() {
           },
         }
       );
-      setMessage("✅ Your request has been submitted successfully!");
+      setMessage("✅ Your ticket has been submitted successfully!");
       setMessageType("success");
-      console.log("✅ Your Request Has Been Submitted successfully:", response.data);
+      console.log("✅ Your Ticket Has Been Submitted successfully:", response.data);
     } catch (error) {
-      setMessage("❌ Failed to create request. Please try again.");
+      setMessage("❌ Failed to create ticket. Please try again.");
       setMessageType("error");
-      console.error("❌ Failed to create request:", error.response?.data || error.message);
+      console.error("❌ Failed to create ticket:", error.response?.data || error.message);
     }
   };
 
   return (
     <div className="shipments">
-      <h2>Give Your Information</h2>
-      <p>ULS Team Will contact You</p>
+      <h2>Submit Your Query</h2>
+      <p>Our team will contact you shortly.</p>
 
       {/* Success/Error Alert */}
       {message && (
@@ -69,16 +99,16 @@ function Shipments() {
         </div>
       )}
 
-      {/* Sign-Up Form */}
-      <div className='sign-up'>
-        <h3>Get a Quote</h3>
+      {/* Query Form */}
+      <div className='query-form'>
+        <h3>Submit a Query</h3>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label>Full Name:</label>
+            <label>Customer Name:</label>
             <input
               type="text"
-              name="lead_name"
-              value={formData.lead_name}
+              name="custom_customer_name"
+              value={formData.custom_customer_name}
               onChange={handleChange}
               required
             />
@@ -87,8 +117,8 @@ function Shipments() {
             <label>Email:</label>
             <input
               type="email"
-              name="email_id"
-              value={formData.email_id}
+              name="custom_customer_email_address"
+              value={formData.custom_customer_email_address}
               onChange={handleChange}
               required
             />
@@ -97,73 +127,38 @@ function Shipments() {
             <label>Mobile Number:</label>
             <input
               type="text"
-              name="mobile_no"
-              value={formData.mobile_no}
+              name="custom_customer_contact_number"
+              value={formData.custom_customer_contact_number}
               onChange={handleChange}
               required
             />
           </div>
-
-          {/* New Field: Custom Lead Type */}
           <div className="form-group">
-            <label>Product Type:</label>
+            <label>Ticket Type:</label>
             <select
-              name="custom_lead_type"
-              value={formData.custom_lead_type}
+              name="ticket_type"
+              value={formData.ticket_type}
               onChange={handleChange}
               required
             >
-              <option value="">Select Lead Type</option>
-              <option value="Export">Export</option>
-              <option value="Import">Import</option>
+              <option value="">Select Ticket Type</option>
+              {Object.entries(userFacingTicketTypeMap).map(([key, value]) => (
+                <option key={key} value={key}>{value}</option>
+              ))}
             </select>
           </div>
-
-          {/* New Field: Request Type */}
-
-
-
-
-
-          
- {/* Other form fields */}
-
-      {/* Custom Request Type 2 Dropdown */}
-      <div className="form-group">
-        <label htmlFor="custom_request_type2">Request Type</label>
-        <select
-  id="custom_request_type2"
-  name="custom_request_type2"
-  value={formData.custom_request_type2}
-  onChange={handleChange}
-  required
->
-  <option value="">Select an option</option>
-  <option value="Rate Inquiry">Rate Inquiry</option>
-  <option value="Transit Time">Transit Time</option>
-  <option value="Customs Requirements / Paper Work">Customs Requirements / Paper Work</option>
-  <option value="Destination">Destination</option>
-  <option value="Commodity Information">Commodity Information</option>
-  <option value="Product Inquiry">Product Inquiry</option>
-</select>
-      </div>
-
-
-
-
-          {/* New Field: Custom Request Details */}
           <div className="form-group">
-            <label>Additional Details:</label>
+            <label>Description:</label>
             <textarea
-              name="custom_request_details"
-              value={formData.custom_request_details}
+              name="description"
+              value={formData.description}
               onChange={handleChange}
-              placeholder="Enter any additional details..."
+              placeholder="Enter your query details..."
               rows="4"
+              required
             ></textarea>
           </div>
-
-          <button type="submit" className="submit-btn">Get Quote</button>
+          <button type="submit" className="submit-btn">Submit Query</button>
         </form>
       </div>
     </div>

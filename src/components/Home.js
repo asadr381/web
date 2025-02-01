@@ -244,7 +244,7 @@ function Home() {
     <img src={pess} alt="Office Location 3" />
     <h3>Peshawar</h3>
     <p>MDF 23, Namal Palaza Khyber Super Market, Bara Road, Near Qayyum Stadium</p>
-    <p>Customer Services: 021-111-669-877</p>
+    <p><FaPhoneAlt /> (0092) 91-5252046-47</p>
     <a href="https://www.google.com/maps?q=33.98999008689488,71.53431641136997" target="_blank" rel="noopener noreferrer">
               <motion.button
                 whileHover={{ scale: 1.1 }}

@@ -28,7 +28,7 @@ const AboutUs = () => {
       {/* Office Cards Section */}
       <div className="office-cards-container">
         <motion.div
-          className="office-card"
+          className="office-cards"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
@@ -43,7 +43,7 @@ const AboutUs = () => {
         </motion.div>
 
         <motion.div
-          className="office-card"
+          className="office-cards"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.7 }}
@@ -58,7 +58,7 @@ const AboutUs = () => {
         </motion.div>
 
         <motion.div
-          className="office-card"
+          className="office-cards"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.9 }}
@@ -72,7 +72,7 @@ const AboutUs = () => {
         </motion.div>
 
         <motion.div
-          className="office-card"
+          className="office-cards"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 1.1 }}
@@ -87,7 +87,7 @@ const AboutUs = () => {
         </motion.div>
 
         <motion.div
-          className="office-card"
+          className="office-cards"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 1.3 }}
@@ -102,7 +102,7 @@ const AboutUs = () => {
         </motion.div>
 
         <motion.div
-          className="office-card"
+          className="office-cards"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 1.5 }}

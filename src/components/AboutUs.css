@@ -25,11 +25,12 @@
   transform: translateY(-5px); /* Subtle hover effect */
 }
 
-.office-card img {
+.office-cards img {
   width: 80%;
-  height: 100px; /* Set a fixed height */
+/* Set a fixed height */
   object-fit: cover; /* Ensure the image maintains its aspect ratio */
   border-radius: 20px;
+  margin-bottom: 15px;
   margin-bottom: 15px;
 }
 

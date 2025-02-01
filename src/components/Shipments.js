@@ -34,7 +34,7 @@ const shipmentTypeMap = {
 function Shipments() {
   const [formData, setFormData] = useState({
     custom_customer_name: "",
-    subject: "Website General Query",
+    subject: "Website Query",
     raised_by: "mraza@ups.com",
     agent_group: "TeleSales",
     custom_employee: "EMP603",

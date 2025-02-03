@@ -141,7 +141,7 @@ function Shipments() {
 
   return (
     <div className="shipments">
-      <h2>Submit Your Query</h2>
+      <h2>Submit Your Shipment Query</h2>
       <p>Our team will contact you shortly.</p>
 
       {/* Success/Error Alert */}

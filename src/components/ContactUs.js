@@ -115,11 +115,7 @@ function ContactUs() {
      
 
       {/* Success/Error Alert */}
-      {message && (
-        <div className={`alert ${messageType === "success" ? "alert-success" : "alert-error"}`}>
-          {message}
-        </div>
-      )}
+      
 
       {/* Query Form */}
       <div className='query-form'>
@@ -181,6 +177,11 @@ function ContactUs() {
             ></textarea>
           </div>
           <button type="submit" className="submit-btn">Submit</button>
+          {message && (
+        <div className={`alert ${messageType === "success" ? "alert-success" : "alert-error"}`}>
+          {message}
+        </div>
+      )}
         </form>
       </div>
     </div>

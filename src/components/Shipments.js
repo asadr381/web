@@ -145,11 +145,7 @@ function Shipments() {
       <p>Our team will contact you shortly.</p>
 
       {/* Success/Error Alert */}
-      {message && (
-        <div className={`alert ${messageType === "success" ? "alert-success" : "alert-error"}`}>
-          {message}
-        </div>
-      )}
+     
 
       {/* Query Form */}
       <div className='query-form'>
@@ -255,6 +251,11 @@ function Shipments() {
             ></textarea>
           </div>
           <button type="submit" className="submit-btn">Submit Query</button>
+          {message && (
+        <div className={`alert ${messageType === "success" ? "alert-success" : "alert-error"}`}>
+          {message}
+        </div>
+      )}
         </form>
       </div>
     </div>

@@ -6,8 +6,8 @@ import './Shipments.css';
 
 // Frappe URL and API credentials
 const FRAPPE_URL = "https://ups.sowaanerp.com";
-const API_KEY = "7f9ceafe1f9cb28";
-const API_SECRET = "107d1e30c242a6f";  
+const API_KEY = "6deab0c07f750cc";
+const API_SECRET = "588f60f1a3a5255"; 
 
 // User-facing ticket type mapping (without "Whatsapp")
 const userFacingTicketTypeMap = {
@@ -34,9 +34,9 @@ function ContactUs() {
   const [formData, setFormData] = useState({
     custom_customer_name: "",
     subject: "Website General Query",
-    raised_by: "mraza@ups.com",
-    agent_group: "TeleSales",
-    custom_employee: "EMP603",
+    raised_by: "whatsapp@erp.ulspk.com",
+    agent_group: "Customer Support",
+    custom_employee: "WebAPI",
     ticket_type: "",
     description: "",
     custom_customer_email_address: "",

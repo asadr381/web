@@ -6,8 +6,8 @@ import './Shipments.css';
 
 // Frappe URL and API credentials
 const FRAPPE_URL = "https://ups.sowaanerp.com";
-const API_KEY = "6deab0c07f750cc";
-const API_SECRET = "588f60f1a3a5255";
+const API_KEY = "7f9ceafe1f9cb28";
+const API_SECRET = "107d1e30c242a6f";  
 
 // User-facing ticket type mapping (without "Whatsapp")
 const userFacingTicketTypeMap = {
@@ -21,12 +21,12 @@ const userFacingTicketTypeMap = {
 
 // API-facing ticket type mapping (with "Whatsapp")
 const apiFacingTicketTypeMap = {
-  "1": "Commodity Information",
-  "2": "Customs Requirements / Paper Work",
-  "3": "Product Inquiry",
-  "4": "Rate Inquiry",
-  "5": "Transit Time",
-  "6": "Corporate / Business Account"
+  "1": "Commodity Information Whatsapp",
+  "2": "Customs Requirements / Paper Work Whatsapp",
+  "3": "Product Inquiry Whatsapp",
+  "4": "Rate Inquiry Whatsapp",
+  "5": "Transit Time Whatsapp",
+  "6": "Corporate / Business Account Whatsapp"
 
 };
 
@@ -34,9 +34,9 @@ function ContactUs() {
   const [formData, setFormData] = useState({
     custom_customer_name: "",
     subject: "Website General Query",
-    raised_by: "whatsapp@erp.ulspk.com,
+    raised_by: "mraza@ups.com",
     agent_group: "TeleSales",
-    custom_employee: "WebAPI",
+    custom_employee: "EMP603",
     ticket_type: "",
     description: "",
     custom_customer_email_address: "",

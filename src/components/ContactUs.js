@@ -13,20 +13,14 @@ const API_SECRET = "588f60f1a3a5255";
 const userFacingTicketTypeMap = {
   "1": "Commodity Information",
   "2": "Customs Requirements / Paper Work",
-  "3": "Product Inquiry",
-  "4": "Rate Inquiry",
-  "5": "Transit Time",
-  "6": "Corporate / Business Account "
+  "3": "Corporate / Business Account "
 };
 
 // API-facing ticket type mapping (with "Whatsapp")
 const apiFacingTicketTypeMap = {
-  "1": "Commodity Information Whatsapp",
-  "2": "Customs Requirements / Paper Work Whatsapp",
-  "3": "Product Inquiry Whatsapp",
-  "4": "Rate Inquiry Whatsapp",
-  "5": "Transit Time Whatsapp",
-  "6": "Corporate / Business Account Whatsapp"
+  "1": "Commodity Information",
+  "2": "Customs Requirements / Paper Work",
+  "3": "Corporate / Business Account "
 
 };
 
@@ -35,7 +29,7 @@ function ContactUs() {
     custom_customer_name: "",
     subject: "Website General Query",
     raised_by: "whatsapp@erp.ulspk.com",
-    agent_group: "Customer Support",
+    agent_group: "TeleSales",
     custom_employee: "WebAPI",
     ticket_type: "",
     description: "",

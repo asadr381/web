@@ -34,9 +34,9 @@ const shipmentTypeMap = {
 function Shipments() {
   const [formData, setFormData] = useState({
     custom_customer_name: "",
-    subject: "Website Query",
+    subject: "website Rate Query",
     raised_by: "whatsapp@erp.ulspk.com",
-    agent_group: "TeleSales",
+    agent_group: "Customer Support",
     custom_employee: "WebAPI",
     ticket_type: "",
     description: "",

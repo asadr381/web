@@ -35,7 +35,7 @@ function ContactUs() {
     custom_customer_name: "",
     subject: "Website General Query",
     raised_by: "whatsapp@erp.ulspk.com,
-    agent_group: "Customer Support",
+    agent_group: "TeleSales",
     custom_employee: "WebAPI",
     ticket_type: "",
     description: "",

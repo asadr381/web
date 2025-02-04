@@ -13,7 +13,7 @@ const API_SECRET = "588f60f1a3a5255";
 const userFacingTicketTypeMap = {
   "1": "Commodity Information",
   "2": "Customs Requirements Paper Work",
-  "3": "Corporate Business Account ",
+  "3": "Corporate or Business Account ",
   "4": "Product Inquiry ",
   "5": "Transit Time "
 };
@@ -22,7 +22,7 @@ const userFacingTicketTypeMap = {
 const apiFacingTicketTypeMap = {
   "1": "Commodity Information",
   "2": "Customs Requirements Paper Work",
-  "3": "Corporate Business Account ",
+  "3": "Corporate or Business Account ",
   "4": "Product Inquiry ",
   "5": "Transit Time "
 

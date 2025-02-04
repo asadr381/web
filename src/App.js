@@ -14,6 +14,9 @@ import AboutUs from './components/AboutUs'; // Import Footer component
 // In your App.js or index.js
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 
 
 function App() {

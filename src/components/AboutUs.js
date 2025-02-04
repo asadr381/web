@@ -84,7 +84,7 @@ const CardSlider = () => {
           onClick={() => setSliderType('airline')}
           className={sliderType === 'airline' ? 'active' : ''}
         >
-          Airline
+         Aviation
         </button>
         <button
           onClick={() => setSliderType('commercial')}

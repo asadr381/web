@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import Slider from 'react-slick';
+
 import './AboutUs.css';
 import prince from "../img/princely.png";
 import amadeus from "../img/amadeus.png";
@@ -90,15 +91,39 @@ const AboutUs = () => {
     // Add more partners here...
   ];
 
-  const settings = {
+  const [sliderSettings, setSliderSettings] = useState({
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: 5, // Default for desktop
     slidesToScroll: 2,
     arrows: true,
     autoplay: true,
     centerMode: true,
     autoplaySpeed: 1500,
-  };
+  });
+
+  useEffect(() => {
+    // Update the slider settings based on screen width
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setSliderSettings((prevSettings) => ({
+          ...prevSettings,
+          slidesToShow: 3, // Show 3 logos on mobile
+        }));
+      } else {
+        setSliderSettings((prevSettings) => ({
+          ...prevSettings,
+          slidesToShow: 5, // Show 5 logos on desktop
+        }));
+      }
+    };
+
+    // Add event listener for resizing
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Set initial settings based on window size
+
+    // Cleanup listener
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleLogoClick = (partner) => {
     setSelectedPartner(partner);
@@ -116,7 +141,7 @@ const AboutUs = () => {
         </p>
         <h2 className="about-us-heading">PARTNERS</h2>
       </div>
-      <Slider {...settings}>
+      <Slider {...sliderSettings}>
         {partners.map((partner, index) => (
           <div key={index} className="partner-logo">
             <img

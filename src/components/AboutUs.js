@@ -84,13 +84,13 @@ const CardSlider = () => {
           onClick={() => setSliderType('airline')}
           className={sliderType === 'airline' ? 'active' : ''}
         >
-          Airline Slider
+          Airline
         </button>
         <button
           onClick={() => setSliderType('commercial')}
           className={sliderType === 'commercial' ? 'active' : ''}
         >
-          Commercial Slider
+          Commercial
         </button>
       </div>
 

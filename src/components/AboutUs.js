@@ -1,6 +1,5 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
-
 import './AboutUs.css';
 import prince from "../img/princely.png";
 import amadeus from "../img/amadeus.png";
@@ -22,54 +21,48 @@ const AboutUs = () => {
     {
       logo: prince,
       name: 'Princely Travels',
-      details: 'Founded in 1976, it soon established itself as one of the most efficient, respected and trusted travel agencies in Pakistan. Princely Travels is one of the leading IATA-accredited Travel Agents in Pakistan. Princely has a team of experienced professionals who provide personalized and premium travel services to top corporate houses, ensuring that all travel needs are met under one roof. '
+      details: 'Founded in 1976, it soon established itself as one of the most efficient, respected, and trusted travel agencies in Pakistan. Princely Travels is one of the leading IATA-accredited Travel Agents in Pakistan. Princely has a team of experienced professionals who provide personalized and premium travel services to top corporate houses, ensuring that all travel needs are met under one roof.'
     },
     {
       logo: amadeus,
       name: 'Amadeus',
-      details: 'Premier Aviation Services (Pvt.) Ltd., a unit of Akbar Group of Companies (The largest Aviation Group in Pakistan), was appointed as the National Marketing Company (NMC) for Amadeus in Pakistan on May 15, 1997. '
+      details: 'Premier Aviation Services (Pvt.) Ltd., a unit of Akbar Group of Companies (The largest Aviation Group in Pakistan), was appointed as the National Marketing Company (NMC) for Amadeus in Pakistan on May 15, 1997.'
     },
     {
       logo: jets,
       name: 'Princely Jets',
-      details: 'Princely Jets is part of the Akbar Group since 2005. It is the single largest private jet charter business in the country. We are also currently the only operator who can offer international flights. Effortless air travel such as that offered by Princely Jets can make that possible. With a private jet at your disposal, you obtain unprecedented control over the way you travel. '
+      details: 'Princely Jets is part of the Akbar Group since 2005. It is the single largest private jet charter business in the country. We are also currently the only operator who can offer international flights. Effortless air travel such as that offered by Princely Jets can make that possible. With a private jet at your disposal, you obtain unprecedented control over the way you travel.'
     },
     {
       logo: singapore,
       name: 'Singapore Airline',
-      details: 'Emerging as one of the finest and fastest growing airlines in the aviation industry, Singapore Airlines is known as an industry leader with a youthful fleet and trend setting practices. Singapore Airlines appointed Akbar Group as its GSA in 1979 and became online in Pakistan in 1985. The airline has independent offices in Karachi, Lahore, and Islamabad.'
+      details: 'Emerging as one of the finest and fastest-growing airlines in the aviation industry, Singapore Airlines is known as an industry leader with a youthful fleet and trend-setting practices. Singapore Airlines appointed Akbar Group as its GSA in 1979 and became online in Pakistan in 1985. The airline has independent offices in Karachi, Lahore, and Islamabad.'
     },
-    //
     {
       logo: thai,
       name: 'Thai Airlines',
       details: 'Thai Air International appointed Akbar Group as its GSA in North Pakistan in May 1979. Since then, Thai Air has been successfully operating in Pakistan. An industry leader when it comes to hospitality and efficiency, Thai Air provides a hub to the Asia Pacific and the world via Bangkok.'
     },
-    //
     {
       logo: adidas,
       name: 'Adidas',
-      details: 'adidas has its roots in Germany but they are a truly global company. Around the world adidas employ over 57,000 people. Every year they produce over 900 million sports and sports lifestyle products with independent manufacturing partners worldwide.'
+      details: 'Adidas has its roots in Germany but they are a truly global company. Around the world, Adidas employs over 57,000 people. Every year they produce over 900 million sports and sports lifestyle products with independent manufacturing partners worldwide.'
     },
-    //
     {
       logo: UPS,
       name: 'UPS',
-      details: 'UPS, founded in 1907, is one of the largest global logistics companies. Over the years UPS has become the worlds largest package delivery company and a global leader in specialized logistics and transportation services. UPS provides its services in more than 200 countries and territories worldwide.'
+      details: 'UPS, founded in 1907, is one of the largest global logistics companies. Over the years, UPS has become the world\'s largest package delivery company and a global leader in specialized logistics and transportation services. UPS provides its services in more than 200 countries and territories worldwide.'
     },
-    //
     {
       logo: tmiex,
       name: 'TIMEX',
-      details: 'TIMEX Group designs, manufactures and markets innovative timepieces and jewelry globally. TIMEX, founded in 1854, has expanded to become TIMEX Group, a privately-held company, with several operating units and over 5,000 employees worldwide.'
+      details: 'TIMEX Group designs, manufactures, and markets innovative timepieces and jewelry globally. TIMEX, founded in 1854, has expanded to become TIMEX Group, a privately-held company, with several operating units and over 5,000 employees worldwide.'
     },
-    //
     {
       logo: Tagheuer,
       name: 'TAG Heuer',
       details: 'TAG Heuer, the avant-garde of Swiss watchmaking since 1860. Ever since, TAG Heuer has been striving to push the boundaries further, inventing timepieces for those who love to defy convention.'
     },
-    //
     {
       logo: pedro,
       name: 'Pedro',
@@ -83,45 +76,41 @@ const AboutUs = () => {
     {
       logo: NIKE,
       name: 'NIKE',
-      details: 'The year 2001 has seen the sport shoes, apparel and accessories market transform in Pakistan as Speed Private Limited (SPL), an Akbar Group company, acquired the exclusive distribution rights for NIKE in Pakistan.'
+      details: 'The year 2001 has seen the sport shoes, apparel, and accessories market transform in Pakistan as Speed Private Limited (SPL), an Akbar Group company, acquired the exclusive distribution rights for NIKE in Pakistan.'
     },
-    //
-    //
-
-    // Add more partners here...
   ];
 
   const [sliderSettings, setSliderSettings] = useState({
     infinite: true,
-    slidesToShow: 5, // Default for desktop
+    slidesToShow: 10,
     slidesToScroll: 2,
     arrows: true,
     autoplay: true,
     centerMode: true,
-    autoplaySpeed: 1500,
+   
+    cssEase: 'linear', 
+    autoplaySpeed: 2000,  // Adjust this to control how slow the slides move
+    speed: 1000,
   });
 
   useEffect(() => {
-    // Update the slider settings based on screen width
     const handleResize = () => {
       if (window.innerWidth <= 768) {
         setSliderSettings((prevSettings) => ({
           ...prevSettings,
-          slidesToShow: 3, // Show 3 logos on mobile
+          slidesToShow: 3,
         }));
       } else {
         setSliderSettings((prevSettings) => ({
           ...prevSettings,
-          slidesToShow: 5, // Show 5 logos on desktop
+          slidesToShow: 5,
         }));
       }
     };
 
-    // Add event listener for resizing
     window.addEventListener('resize', handleResize);
-    handleResize(); // Set initial settings based on window size
+    handleResize();
 
-    // Cleanup listener
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 

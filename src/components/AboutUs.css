@@ -1,47 +1,127 @@
 .about-us {
-  padding: 20px;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.about-us-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-us-heading {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  animation: fadeInDown 1s ease;
+}
+
+.about-us-text {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease;
 }
 
 .partner-logo {
   text-align: center;
+  padding: 10px;
 }
 
 .logo {
-  width: 100px; /* Fixed width for desktop */
-  height: 100px; /* Fixed height for desktop */
-  object-fit: contain; /* Ensures logos maintain aspect ratio without distortion */
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .logo:hover {
   transform: scale(1.1);
+  opacity: 0.8;
 }
 
 .partner-details {
-  margin-top: 20px;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease;
 }
 
-.slick-slide {
-  transition: transform 0.3s ease;
+.partner-details h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 15px;
 }
 
-/* Responsive Styles for Mobile */
+.partner-details p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
   .logo {
-    width: 80px; /* Slightly smaller logo for mobile */
-    height: 80px; /* Maintain aspect ratio */
+    width: 80px;
+    height: 80px;
   }
 
-  .about-us {
-    padding: 10px; /* Reduce padding on mobile */
+  .about-us-heading {
+    font-size: 2rem;
+  }
+
+  .about-us-text {
+    font-size: 1rem;
   }
 }
 
-/* Further adjustment for very small screens (e.g., portrait mobile) */
 @media (max-width: 480px) {
   .logo {
-    width: 60px; /* Even smaller logo for small mobile screens */
-    height: 60px; /* Maintain aspect ratio */
+    width: 60px;
+    height: 60px;
+  }
+
+  .about-us-heading {
+    font-size: 1.8rem;
+  }
+
+  .about-us-text {
+    font-size: 0.9rem;
   }
 }

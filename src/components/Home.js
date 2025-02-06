@@ -72,7 +72,7 @@ function Home() {
           transition={{ duration: 1, ease: "easeOut" }}
           style={{ textAlign: 'center', marginTop: '50px' }}
         >
-          <h1 style={{ color: '#351c15' }}>UNIVERSAL LOGISTICS SERVICES PVT. LTD</h1>
+          <h1 style={{ color: '#351c15' }}>UNIVERSAL LOGISTICS SERVICES (PVT.) LTD</h1>
           <h3 style={{ color: '#351c15' }}>UPS Authorised Service Contractor Pakistan </h3>
           <p style={{ color: 'black' }}>Providing world-class logistics solutions with efficiency and transparency. We specialize in international shipping, warehousing, and supply chain management to deliver faster, more securely, and cost-effectively.</p>
         </motion.div>

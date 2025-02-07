@@ -33,7 +33,7 @@ function ContactUs() {
   const [formData, setFormData] = useState({
     custom_customer_name: "",
     subject: "Website General Query",
-    raised_by: "whatsapp@erp.ulspk.com",
+
     agent_group: "Customer Support",
     custom_employee: "WebAPI",
     ticket_type: "",
@@ -48,6 +48,7 @@ function ContactUs() {
   const handleChange = (e) => {
     setFormData({
       ...formData,
+      raised_by: formData.custom_customer_email_address,
       [e.target.name]: e.target.value,
     });
   };

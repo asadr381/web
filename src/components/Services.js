@@ -1,6 +1,6 @@
 import React from 'react';
 import './Services.css';
-
+import { motion } from 'framer-motion';
 function Services() {
   return (
     <div className="services">
@@ -54,6 +54,24 @@ function Services() {
             </div>
           </div>
         </div>
+        <motion.div 
+        className="whatsapp-widget"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        style={{
+          position: 'fixed',
+          bottom: '20px',
+          right: '20px',
+          backgroundColor: '#25d366',
+          borderRadius: '50%',
+          padding: '15px',
+          cursor: 'pointer',
+        }}
+      >
+        <a href="https://wa.me/92021111669877" target="_blank" rel="noopener noreferrer">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style={{ width: '40px', height: '40px' }} />
+        </a>
+      </motion.div>
       </div>
     </div>
   );

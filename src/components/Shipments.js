@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Shipments.css';
-
+import { motion } from 'framer-motion';
 // Frappe URL and API credentials
 const FRAPPE_URL = "https://ups.sowaanerp.com";
 const API_KEY = "6deab0c07f750cc";
@@ -24,7 +24,7 @@ function Shipments() {
   const [formData, setFormData] = useState({
     custom_customer_name: "",
     subject: "website Rate Query",
-    raised_by: "whatsapp@erp.ulspk.com",
+
     agent_group: "TeleSales",
     custom_employee: "WebAPI",
     ticket_type: "Rate Inquiry",
@@ -104,8 +104,8 @@ function Shipments() {
 
       const payload = {
         ...formData,
-
-        description: `Shipment From: ${formData.shipmentFrom}, Shipment To: ${formData.shipmentTo}, Weight: ${formData.weight}kg, Shipment Type: ${formattedShipmentType}`
+        raised_by: formData.custom_customer_email_address,
+        description: `Shipment From: ${formData.shipmentFrom}, Shipment To: ${formData.shipmentTo}, Weight: ${formData.weight}kg, Shipment Type: ${formattedShipmentType}, Deatils: ${formData.description}`
       };
 
       const response = await axios.post(
@@ -233,6 +233,24 @@ function Shipments() {
         </div>
       )}
         </form>
+        <motion.div 
+        className="whatsapp-widget"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        style={{
+          position: 'fixed',
+          bottom: '20px',
+          right: '20px',
+          backgroundColor: '#25d366',
+          borderRadius: '50%',
+          padding: '15px',
+          cursor: 'pointer',
+        }}
+      >
+        <a href="https://wa.me/92021111669877" target="_blank" rel="noopener noreferrer">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style={{ width: '40px', height: '40px' }} />
+        </a>
+      </motion.div>
       </div>
       
     </div>

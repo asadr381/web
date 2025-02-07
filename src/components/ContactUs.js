@@ -3,6 +3,7 @@ import { FaEnvelope, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Shipments.css';
+import { motion } from 'framer-motion';
 
 // Frappe URL and API credentials
 const FRAPPE_URL = "https://ups.sowaanerp.com";
@@ -187,6 +188,24 @@ function ContactUs() {
         </div>
       )}
         </form>
+        <motion.div 
+        className="whatsapp-widget"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        style={{
+          position: 'fixed',
+          bottom: '20px',
+          right: '20px',
+          backgroundColor: '#25d366',
+          borderRadius: '50%',
+          padding: '15px',
+          cursor: 'pointer',
+        }}
+      >
+        <a href="https://wa.me/92021111669877" target="_blank" rel="noopener noreferrer">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style={{ width: '40px', height: '40px' }} />
+        </a>
+      </motion.div>
       </div>
     </div>
   );

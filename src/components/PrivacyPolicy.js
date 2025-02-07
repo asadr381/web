@@ -1,6 +1,6 @@
 import React from 'react';
 import './PrivacyPolicy.css';
-
+import { motion } from 'framer-motion';
 function PrivacyPolicy() {
   return (
     <div className="privacy-policy">
@@ -117,6 +117,24 @@ function PrivacyPolicy() {
           <a href="mailto:support@ulspk.com"> pkcustsvc@ups.com</a>.
         </p>
       </section>
+      <motion.div 
+        className="whatsapp-widget"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        style={{
+          position: 'fixed',
+          bottom: '20px',
+          right: '20px',
+          backgroundColor: '#25d366',
+          borderRadius: '50%',
+          padding: '15px',
+          cursor: 'pointer',
+        }}
+      >
+        <a href="https://wa.me/92021111669877" target="_blank" rel="noopener noreferrer">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style={{ width: '40px', height: '40px' }} />
+        </a>
+      </motion.div>
     </div>
   );
 }

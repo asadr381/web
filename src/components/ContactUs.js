@@ -6,9 +6,12 @@ import './Shipments.css';
 import { motion } from 'framer-motion';
 
 // Frappe URL and API credentials
-const FRAPPE_URL = "https://ups.sowaanerp.com";
-const API_KEY = "6deab0c07f750cc";
-const API_SECRET = "588f60f1a3a5255"; 
+const FRAPPE_URL = process.env.REACT_APP_FRAPPE_URL;
+const API_KEY = process.env.REACT_APP_API_KEY;
+const API_SECRET = process.env.REACT_APP_API_SECRET;
+
+console.log(FRAPPE_URL, API_KEY, API_SECRET); // For testing
+
 
 // User-facing ticket type mapping (without "Whatsapp")
 const userFacingTicketTypeMap = {

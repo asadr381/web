@@ -96,7 +96,7 @@ function Home() {
             <img src={serviceImage} alt="Service Image" style={{ width: '100%', borderRadius: '8px' }} />
             <h3 style={{ color: '#351c15' }}>Customer First</h3>
             <p style={{ color: 'black', textAlign: 'left' }}>We prioritize our customers and their needs, ensuring an exceptional experience every time.</p>
-            <a href="https://about.ups.com/us/en/our-stories/customer-first/the-ups-store-earns-top-spot.html" target="_blank" rel="noopener noreferrer">
+            <a href="" target="_blank" rel="noopener noreferrer">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -119,7 +119,7 @@ function Home() {
             <img src={collageImage} alt="Small Business Image" style={{ width: '100%', borderRadius: '8px' }} />
             <h3 style={{ color: '#351c15' }}>Innovative Solutions</h3>
             <p style={{ color: 'black',textAlign: 'left' }}>Our forward-thinking approach helps us stay ahead of the curve, offering innovative logistics services.</p>
-            <a href="https://about.ups.com/us/en/our-stories/customer-first/small-business-big-growth.html" target="_blank" rel="noopener noreferrer">
+            <a href="" target="_blank" rel="noopener noreferrer">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}

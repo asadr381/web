@@ -2,17 +2,13 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Shipments.css';
 import { motion } from 'framer-motion';
-// Frappe URL and API credentials
+import ReCAPTCHA from 'react-google-recaptcha'; // Import ReCAPTCHA
+
 const FRAPPE_URL = process.env.REACT_APP_FRAPPE_URL;
 const API_KEY = process.env.REACT_APP_API_KEY;
 const API_SECRET = process.env.REACT_APP_API_SECRET;
-// User-facing ticket type mapping (without "Whatsapp")
+const RECAPTCHA_SITE_KEY = process.env.REACT_APP_RECAPTCHA_SITE_KEY; // Add your reCAPTCHA site key
 
-
-// API-facing ticket type mapping (with "Whatsapp")
-
-
-// Shipment type mapping
 const shipmentTypeMap = {
   "1": "Letter (0.5kg only)",
   "2": "Document (0.5kg to 5kg only)",
@@ -23,7 +19,6 @@ function Shipments() {
   const [formData, setFormData] = useState({
     custom_customer_name: "",
     subject: "website Rate Query",
-
     agent_group: "TeleSales",
     custom_employee: "WebAPI",
     ticket_type: "Rate Inquiry",
@@ -35,10 +30,10 @@ function Shipments() {
     shipmentType: "",
     weight: ""
   });
-  const [message, setMessage] = useState(""); // To show success or error message
-  const [messageType, setMessageType] = useState(""); // To track message type (success or error)
+  const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState("");
+  const [recaptchaToken, setRecaptchaToken] = useState(null); // State to hold the reCAPTCHA token
 
-  // Handle input changes
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -46,44 +41,43 @@ function Shipments() {
     });
   };
 
-  // Validate email
   const isValidEmail = (email) => {
     const emailRegex = /^[^\s@]+@(ups\.com|gmail\.com|yahoo\.com)$/i;
     return emailRegex.test(email);
   };
 
-  // Validate phone number
   const isValidPhoneNumber = (phone) => {
     const phoneRegex = /^\d{9,13}$/;
     return phoneRegex.test(phone);
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validate email
+    if (!recaptchaToken) {
+      setMessage("⚠️ Please complete the reCAPTCHA verification.");
+      setMessageType("error");
+      return;
+    }
+
     if (!isValidEmail(formData.custom_customer_email_address)) {
       setMessage("⚠️ Invalid email. Please enter a valid email ending with @ups.com, @gmail.com, or @yahoo.com.");
       setMessageType("error");
       return;
     }
 
-    // Validate phone number
     if (!isValidPhoneNumber(formData.custom_customer_contact_number)) {
       setMessage("⚠️ Invalid phone number. Please enter a valid phone number (9 to 13 digits).");
       setMessageType("error");
       return;
     }
 
-    // Validate shipment type
     if (!shipmentTypeMap[formData.shipmentType]) {
       setMessage("⚠️ Invalid shipment type. Please select a valid option.");
       setMessageType("error");
       return;
     }
 
-    // Validate weight
     if (isNaN(formData.weight) || formData.weight <= 0) {
       setMessage("⚠️ Invalid weight. Please enter a valid weight in kg.");
       setMessageType("error");
@@ -94,17 +88,15 @@ function Shipments() {
     createTicket();
   };
 
-  // Create Ticket function with API Key authentication
   const createTicket = async () => {
     try {
-      // Map the selected ticket type key to the API-facing value
-
       const formattedShipmentType = shipmentTypeMap[formData.shipmentType] || formData.shipmentType;
 
       const payload = {
         ...formData,
         raised_by: formData.custom_customer_email_address,
-        description: `Shipment From: ${formData.shipmentFrom}, Shipment To: ${formData.shipmentTo}, Weight: ${formData.weight}kg, Shipment Type: ${formattedShipmentType}, Deatils: ${formData.description}`
+        description: `Shipment From: ${formData.shipmentFrom}, Shipment To: ${formData.shipmentTo}, Weight: ${formData.weight}kg, Shipment Type: ${formattedShipmentType}, Details: ${formData.description}`,
+        recaptchaToken // Include the reCAPTCHA token in the payload
       };
 
       const response = await axios.post(
@@ -113,7 +105,7 @@ function Shipments() {
         {
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `token ${API_KEY}:${API_SECRET}`, // API Key Authentication
+            'Authorization': `token ${API_KEY}:${API_SECRET}`,
           },
         }
       );
@@ -127,18 +119,24 @@ function Shipments() {
     }
   };
 
+  const handleRecaptcha = (token) => {
+    setRecaptchaToken(token); // Set the reCAPTCHA token
+  };
+
   return (
     <div className="shipments">
       <h2>Submit Your Shipment Query</h2>
       <p>Our team will contact you shortly.</p>
 
-      {/* Success/Error Alert */}
-     
+      {message && (
+        <div className={`alert ${messageType === "success" ? "alert-success" : "alert-error"}`}>
+          {message}
+        </div>
+      )}
 
-      {/* Query Form */}
       <div className='query-form'>
-
         <form onSubmit={handleSubmit}>
+          {/* Form fields... */}
           <div className="form-group">
             <label>Name:</label>
             <input
@@ -213,7 +211,6 @@ function Shipments() {
               required
             />
           </div>
-       
           <div className="form-group">
             <label>Description:</label>
             <textarea
@@ -225,35 +222,35 @@ function Shipments() {
               required
             ></textarea>
           </div>
+          <ReCAPTCHA
+            sitekey={RECAPTCHA_SITE_KEY} // Use your reCAPTCHA site key
+            onChange={handleRecaptcha} // Handle the token
+          />
           <button type="submit" className="submit-btn">Submit Query</button>
-          {message && (
-        <div className={`alert ${messageType === "success" ? "alert-success" : "alert-error"}`}>
-          {message}
-        </div>
-      )}
         </form>
         <motion.div 
-        className="whatsapp-widget"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        style={{
-          position: 'fixed',
-          bottom: '20px',
-          right: '20px',
-          backgroundColor: '#25d366',
-          borderRadius: '50%',
-          padding: '15px',
-          cursor: 'pointer',
-        }}
-      >
-        <a href="https://wa.me/92021111669877" target="_blank" rel="noopener noreferrer">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style={{ width: '40px', height: '40px' }} />
-        </a>
-      </motion.div>
+          className="whatsapp-widget"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          style={{
+            position: 'fixed',
+            bottom: '20px',
+            right: '20px',
+            backgroundColor: '#25d366',
+            borderRadius: '50%',
+            padding: '15px',
+            cursor: 'pointer',
+          }}
+        >
+          <a href="https://wa.me/92021111669877" target="_blank" rel="noopener noreferrer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style={{ width: '40px', height: '40px' }} />
+          </a>
+        </motion.div>
       </div>
-      
     </div>
   );
 }
 
 export default Shipments;
+
+

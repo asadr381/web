@@ -1,9 +1,10 @@
 import { FaEnvelope, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import './Shipments.css';
 import { motion } from 'framer-motion';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 // Frappe URL and API credentials
 const FRAPPE_URL = process.env.REACT_APP_FRAPPE_URL;
@@ -46,7 +47,8 @@ function ContactUs() {
   });
   const [message, setMessage] = useState("");  // To show success or error message
   const [messageType, setMessageType] = useState(""); // To track message type (success or error)
-
+ const [recaptchaValue, setRecaptchaValue] = useState(null);
+  const recaptchaRef = useRef(null);
   // Handle input changes
   const handleChange = (e) => {
     setFormData({
@@ -59,6 +61,11 @@ function ContactUs() {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!recaptchaValue) {
+      setMessage("⚠️ Please complete the reCAPTCHA.");
+      setMessageType("error");
+      return;
+    }
     createTicket();
   };
 
@@ -69,7 +76,9 @@ function ContactUs() {
       const formattedTicketType = apiFacingTicketTypeMap[formData.ticket_type];
       const payload = {
         ...formData,
+        recaptchaResponse: recaptchaValue ,
         ticket_type: formattedTicketType
+        
       };
 
       const response = await axios.post(
@@ -90,6 +99,9 @@ function ContactUs() {
       setMessageType("error");
       console.error("❌ Failed to create request:", error.response?.data || error.message);
     }
+  };
+  const onRecaptchaChange = (value) => {
+    setRecaptchaValue(value);
   };
 
   return (
@@ -185,6 +197,11 @@ function ContactUs() {
               required
             ></textarea>
           </div>
+          <ReCAPTCHA
+              ref={recaptchaRef}
+              sitekey="6Lcpn9IqAAAAALvSEcVzkREI5V_KiMqlFMsb1XvI"
+              onChange={onRecaptchaChange}
+            />
           <button type="submit" className="submit-btn">Submit</button>
           {message && (
         <div className={`alert ${messageType === "success" ? "alert-success" : "alert-error"}`}>

@@ -203,6 +203,7 @@ function ContactUs() {
               onChange={onRecaptchaChange}
             />
           <button type="submit" className="submit-btn">Submit</button>
+          <p>We respect your privacy. Your information is only used to contact you for your issues or provide shipping rates.</p>
           {message && (
         <div className={`alert ${messageType === "success" ? "alert-success" : "alert-error"}`}>
           {message}

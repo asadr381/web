@@ -197,11 +197,14 @@ function ContactUs() {
               required
             ></textarea>
           </div>
-          <ReCAPTCHA
-              ref={recaptchaRef}
-              sitekey="6LegsNMqAAAAAFM-V34ivxA2qP1RVFZQb80BndgY"
-              onChange={onRecaptchaChange}
-            />
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center"}}>
+  <ReCAPTCHA
+    ref={recaptchaRef}
+    sitekey="6LegsNMqAAAAAFM-V34ivxA2qP1RVFZQb80BndgY"
+    onChange={onRecaptchaChange}
+  />
+</div>
+
           <button type="submit" className="submit-btn">Submit</button>
           <p>We respect your privacy. Your information is only used to contact you for your issues or provide shipping rates.</p>
           {message && (

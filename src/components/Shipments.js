@@ -217,11 +217,13 @@ function Shipments() {
             ></textarea>
           </div>
           <div className="form-group">
-            <ReCAPTCHA
-              ref={recaptchaRef}
-              sitekey="6LegsNMqAAAAAFM-V34ivxA2qP1RVFZQb80BndgY"
-              onChange={onRecaptchaChange}
-            />
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center"}}>
+             <ReCAPTCHA
+                   ref={recaptchaRef}
+               sitekey="6LegsNMqAAAAAFM-V34ivxA2qP1RVFZQb80BndgY"
+                 onChange={onRecaptchaChange}
+                />
+                 </div>
           </div>
           <button type="submit" className="submit-btn">Submit Query</button>
           <p>We respect your privacy. Your information is only used to contact you for your issues or provide shipping rates.</p>

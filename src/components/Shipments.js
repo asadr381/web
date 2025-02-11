@@ -131,99 +131,107 @@ function Shipments() {
 
       <div className='query-form'>
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label>Name:</label>
-            <input
-              type="text"
-              name="custom_customer_name"
-              value={formData.custom_customer_name}
-              onChange={handleChange}
-              required
-            />
+          <div className="form-grid">
+            <div className="form-group">
+              <label>Name:</label>
+              <input
+                type="text"
+                name="custom_customer_name"
+                placeholder="Your full name"
+                value={formData.custom_customer_name}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>Email:</label>
+              <input
+                type="email"
+                name="custom_customer_email_address"
+                placeholder="Your Email Address"
+                value={formData.custom_customer_email_address}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>Number:</label>
+              <input
+                type="text"
+                name="custom_customer_contact_number"
+                placeholder="Your contact Number"
+                value={formData.custom_customer_contact_number}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>Ship From:</label>
+              <input
+                type="text"
+                name="shipmentFrom"
+                placeholder="From where you are sending your shipment"
+                value={formData.shipmentFrom}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>Ship To:</label>
+              <input
+                type="text"
+                name="shipmentTo"
+                   placeholder="Where you want to send your shipment"
+                value={formData.shipmentTo}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>Type:</label>
+              <select
+                name="shipmentType"
+                value={formData.shipmentType}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Select Shipment Type</option>
+                <option value="1">Letter (0.5kg only)</option>
+                <option value="2">Document (0.5kg to 5kg only)</option>
+                <option value="3">Parcel (0.5kg to 70kg)</option>
+              </select>
+            </div>
+            <div className="form-group">
+              <label>Weight:</label>
+              <input
+                type="number"
+                name="weight"
+                value={formData.weight}
+                onChange={handleChange}
+                placeholder="Shipment weight in KGs"
+                required
+              />
+            </div>
+            <div className="form-group full-width">
+              <label>Description:</label>
+              <textarea
+                name="description"
+                value={formData.description}
+                onChange={handleChange}
+                placeholder="Enter your query details..."
+                rows="4"
+                required
+              ></textarea>
+            </div>
           </div>
-          <div className="form-group">
-            <label>Email:</label>
-            <input
-              type="email"
-              name="custom_customer_email_address"
-              value={formData.custom_customer_email_address}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label>Mobile Number:</label>
-            <input
-              type="text"
-              name="custom_customer_contact_number"
-              value={formData.custom_customer_contact_number}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label>Shipment Country From:</label>
-            <input
-              type="text"
-              name="shipmentFrom"
-              value={formData.shipmentFrom}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label>Shipment Country To:</label>
-            <input
-              type="text"
-              name="shipmentTo"
-              value={formData.shipmentTo}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label>Shipment Type:</label>
-            <select
-              name="shipmentType"
-              value={formData.shipmentType}
-              onChange={handleChange}
-              required
-            >
-              <option value="">Select Shipment Type</option>
-              <option value="1">Letter (0.5kg only)</option>
-              <option value="2">Document (0.5kg to 5kg only)</option>
-              <option value="3">Parcel (0.5kg to 70kg)</option>
-            </select>
-          </div>
-          <div className="form-group">
-            <label>Shipment Weight (kg):</label>
-            <input
-              type="number"
-              name="weight"
-              value={formData.weight}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label>Description:</label>
-            <textarea
-              name="description"
-              value={formData.description}
-              onChange={handleChange}
-              placeholder="Enter your query details..."
-              rows="4"
-              required
-            ></textarea>
-          </div>
-          <div className="form-group">
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center"}}>
-             <ReCAPTCHA
-                   ref={recaptchaRef}
-               sitekey="6LegsNMqAAAAAFM-V34ivxA2qP1RVFZQb80BndgY"
-                 onChange={onRecaptchaChange}
-                />
-                 </div>
+          <div className="form-group full-width">
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center"}}>
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey="6LegsNMqAAAAAFM-V34ivxA2qP1RVFZQb80BndgY"
+                onChange={onRecaptchaChange}
+              />
+            </div>
           </div>
           <button type="submit" className="submit-btn">Submit Query</button>
           <p>We respect your privacy. Your information is only used to contact you for your issues or provide shipping rates.</p>

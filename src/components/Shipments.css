@@ -1,5 +1,95 @@
 /* General styles */
 .shipments {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.query-form {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+label {
+  margin-bottom: 5px;
+
+}
+
+input, select, textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.submit-btn {
+  grid-column: span 2;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.alert {
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.whatsapp-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.whatsapp-widget img {
+  width: 40px;
+  height: 40px;
+}
+.shipments {
   text-align: center;
   margin: 2rem auto;
   max-width: 800px;

@@ -199,7 +199,7 @@ function ContactUs() {
           </div>
           <ReCAPTCHA
               ref={recaptchaRef}
-              sitekey="6LcwsNMqAAAAAP6pTMWoTdCwhZSqrWAcDiM2rKCi"
+              sitekey="6LegsNMqAAAAAFM-V34ivxA2qP1RVFZQb80BndgY"
               onChange={onRecaptchaChange}
             />
           <button type="submit" className="submit-btn">Submit</button>

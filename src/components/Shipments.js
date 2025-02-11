@@ -219,7 +219,7 @@ function Shipments() {
           <div className="form-group">
             <ReCAPTCHA
               ref={recaptchaRef}
-              sitekey="6LcwsNMqAAAAAP6pTMWoTdCwhZSqrWAcDiM2rKCi"
+              sitekey="6LegsNMqAAAAAFM-V34ivxA2qP1RVFZQb80BndgY"
               onChange={onRecaptchaChange}
             />
           </div>

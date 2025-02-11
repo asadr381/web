@@ -1,9 +1,9 @@
 import React from 'react';
 import './Home.css';
 import { motion } from 'framer-motion';
-import billImage from '../img/bill.png';
-import serviceImage from '../img/img2.PNG'; // Your service image
-import collageImage from '../img/img3.PNG'; 
+import billImage from '../img/pic1.jpg';
+import serviceImage from '../img/pic2.jpg'; // Your service image
+import collageImage from '../img/pic3.jpg'; 
 import lahore from '../img/lahore.jpg';
 import sialkot from '../img/sialkot.jpg';
 import karachi from '../img/karachi.JPG'; // Your small business image
@@ -15,6 +15,8 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaHeadset } from "react-icons/fa";
 import fsd from '../img/fsd.jpg';
 import pess from '../img/pess.jpg';
+
+
 function Home() {
   return (
     <div className="home-container">

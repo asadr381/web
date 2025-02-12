@@ -94,7 +94,12 @@ const AboutUs = () => {
 
       
        <div className="about-us-container">
-        <h2 className="about-us-heading">AKBAR GROUP</h2>
+       <h2 className="company-heading">
+  <a href="https://www.akbargroup.com.pk/" target="_blank" rel="noopener noreferrer">
+    AKBAR GROUP
+  </a>
+</h2>
+
         <p className="about-us-text">
           <strong>Universal Logistics Services (ULS)</strong>, owned by the Akbar Group, is a renowned leader in global logistics and an authorized service contractor for UPS in Pakistan. With a focus on secure and timely deliveries, ULS offers innovative solutions designed to enhance operational efficiency, lower costs, and significantly improve customer satisfaction.
         </p>
@@ -105,7 +110,7 @@ const AboutUs = () => {
       </div>
 
 
-      <h2 className="about-us-heading">PARTNERS</h2>
+      <h2 className="company-heading">PARTNERS</h2>
 
       {/* Partners Section */}
       <div className="partners-section">

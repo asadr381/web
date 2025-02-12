@@ -30,10 +30,14 @@ const Footer = () => {
           <p><FaEnvelope /> pkcustsvc@ups.com</p>
           <p><FaMapMarkerAlt /> D-79, Kehkashan Clifton Block-5, Karachi, Pakistan</p>
           <div className="social-icons">
-
-        
-            <a href="https://www.linkedin.com/company/upspakistanasc/"><FaLinkedin /></a>
-          </div>
+      <a
+        href="https://www.linkedin.com/company/upspakistanasc/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaLinkedin className="linkedin-icon" />
+      </a>
+    </div>
         </div>
       </div>
       <div className="footer-bottom">

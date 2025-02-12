@@ -1,5 +1,23 @@
 /* General Styling */
 /* General Styling */
+
+.company-heading {
+  font-size: 24px; /* Adjust size */
+  font-weight: bold;
+  text-align: center; /* Center the heading */
+}
+
+.company-heading a {
+  color: #351c15; /* Change link color to dark grey/black */
+  text-decoration: none; /* Remove default underline */
+  transition: color 0.3s ease-in-out; /* Smooth color transition */
+}
+
+.company-heading a:hover {
+  color: #f7b500; /* Change color on hover (blue shade) */
+  text-decoration: underline; /* Underline on hover */
+}
+
 .about-us-container {
   max-width: 1000px;
   margin: 50px auto;

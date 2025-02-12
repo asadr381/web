@@ -135,7 +135,15 @@ function Shipments() {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <h2 className="shipping-info-heading">Tariff Guide </h2>
+
+      
+<h2 className="shipping-info-heading">
+  <a href="/files/tariff-guide-pk.pdf" download>
+    Download Tariff Guide
+  </a>
+</h2>
+
+    
       <motion.img
   src={guide}
   alt="Business Growth"

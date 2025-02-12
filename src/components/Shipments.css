@@ -1,11 +1,19 @@
 /* ShippingInfo.css */
+.shipping-info-heading a {
+  color: #351c15; /* Change text color to black */
+  text-decoration: underline; /* Keep underline */
+}
+
+.shipping-info-heading a:hover {
+  color: #ffc400; /* Optional: Change color on hover */
+}
 
 .shipping-info-container {
   position: relative;
   margin: 20px;
   text-align: left;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #ffffff;
   border-radius: 8px;
   background-color: #f9f9f9;
   max-width: 800px;
@@ -22,7 +30,7 @@
 .shipping-info-details {
   margin-top: 10px;
   padding: 10px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #ffffff;
   background-color: #fff;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -119,7 +127,7 @@ label {
 
 input, select, textarea {
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #ffffff;
   border-radius: 4px;
   font-size: 14px;
 }

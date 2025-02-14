@@ -99,14 +99,7 @@ function Home() {
             <h3 style={{ color: '#351c15' }}>Customer First</h3>
             <p style={{ color: 'black', textAlign: 'left' }}>We prioritize our customers and their needs, ensuring an exceptional experience every time.</p>
             <a href="" target="_blank" rel="noopener noreferrer">
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="cta-button"
-                style={{ padding: '10px 20px', backgroundColor: '#ffc400', color: 'black', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
-              >
-                See the Story
-              </motion.button>
+           
             </a>
           </motion.div>
 
@@ -122,14 +115,7 @@ function Home() {
             <h3 style={{ color: '#351c15' }}>Innovative Solutions</h3>
             <p style={{ color: 'black',textAlign: 'left' }}>Our forward-thinking approach helps us stay ahead of the curve, offering innovative logistics services.</p>
             <a href="" target="_blank" rel="noopener noreferrer">
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="cta-button"
-                style={{ padding: '10px 20px', backgroundColor: '#ffc400', color: 'black', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
-              >
-                Learn More
-              </motion.button>
+            
             </a>
           </motion.div>
         </motion.div>

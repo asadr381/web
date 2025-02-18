@@ -128,9 +128,9 @@ function Shipments() {
 
   return ( <div> 
    
+   
 
-
-   <div 
+   {/*<div 
       className="shipping-info-container"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -232,13 +232,7 @@ function Shipments() {
           </p>
         </div>
       )}
-    </div>
-  
-
-   
-
-
-
+    </div>*/}
 
 
 

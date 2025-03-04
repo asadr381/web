@@ -39,6 +39,8 @@ function CustomCaptcha({ onVerify }) {
       <div className="captcha-value">{captchaValue}</div>
       <input
         type="text"
+        id="captchaInput"
+        name="captchaInput"
         value={captchaInput}
         onChange={handleChange}
         placeholder="Enter CAPTCHA"

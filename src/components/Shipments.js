@@ -192,7 +192,7 @@ function Shipments() {
                 type="text"
                 id="shipmentTo"
                 name="shipmentTo"
-                   placeholder="Where you want to send your shipment"
+                placeholder="Where you want to send your shipment"
                 value={formData.shipmentTo}
                 onChange={handleChange}
                 required

@@ -131,9 +131,10 @@ function ContactUs() {
       <div className='query-form'>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label>Name:</label>
+            <label htmlFor="custom_customer_name">Name:</label>
             <input
               type="text"
+              id="custom_customer_name"
               name="custom_customer_name"
               value={formData.custom_customer_name}
               onChange={handleChange}
@@ -141,9 +142,10 @@ function ContactUs() {
             />
           </div>
           <div className="form-group">
-            <label>Email:</label>
+            <label htmlFor="custom_customer_email_address">Email:</label>
             <input
               type="email"
+              id="custom_customer_email_address"
               name="custom_customer_email_address"
               value={formData.custom_customer_email_address}
               onChange={handleChange}
@@ -151,9 +153,10 @@ function ContactUs() {
             />
           </div>
           <div className="form-group">
-            <label>Mobile Number:</label>
+            <label htmlFor="custom_customer_contact_number">Mobile Number:</label>
             <input
               type="text"
+              id="custom_customer_contact_number"
               name="custom_customer_contact_number"
               value={formData.custom_customer_contact_number}
               onChange={handleChange}
@@ -161,8 +164,9 @@ function ContactUs() {
             />
           </div>
           <div className="form-group">
-            <label>Request Type:</label>
+            <label htmlFor="ticket_type">Request Type:</label>
             <select
+              id="ticket_type"
               name="ticket_type"
               value={formData.ticket_type}
               onChange={handleChange}
@@ -175,8 +179,9 @@ function ContactUs() {
             </select>
           </div>
           <div className="form-group">
-            <label>Description:</label>
+            <label htmlFor="description">Description:</label>
             <textarea
+              id="description"
               name="description"
               value={formData.description}
               onChange={handleChange}

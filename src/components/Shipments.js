@@ -240,7 +240,7 @@ function Shipments() {
           </div>
           <div className="form-group full-width">
             <div style={{ display: "flex", justifyContent: "center", alignItems: "center"}}>
-              <CustomCaptcha onVerify={handleCaptchaVerify} />
+              <CustomCaptcha id="captcha" name="captcha" onVerify={handleCaptchaVerify} />
             </div>
           </div>
           <button type="submit" className="submit-btn">Submit Query</button>

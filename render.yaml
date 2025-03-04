@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: my-react-app
+    runtime: static
+    staticPublishPath: build
+    buildCommand: npm run build

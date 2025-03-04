@@ -1,0 +1,395 @@
+/* General styles */
+/* General styles */
+.shipments {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.query-form {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+label {
+  margin-bottom: 5px;
+
+}
+
+input, select, textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.submit-btn {
+  grid-column: span 2;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.alert {
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.whatsapp-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.whatsapp-widget img {
+  width: 40px;
+  height: 40px;
+}
+.shipments {
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 800px;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Success/Error message styles */
+.alert {
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border-left: 5px solid #28a745;
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-left: 5px solid #dc3545;
+}
+
+/* Form container */
+.sign-up {
+  margin-top: 30px;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Form elements */
+.form-group {
+  margin-bottom: 1.2rem;
+  text-align: left;
+  padding: 0 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  font-size: 1rem;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  background: #f8f8f8;
+}
+
+/* Input field hover & focus effects */
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+  border-color: #ffc400;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #000000;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 86, 179, 0.3);
+}
+
+/* Submit Button */
+.submit-btn {
+  background: linear-gradient(90deg, #351c15, #351c15);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Button hover effect */
+.submit-btn:hover {
+  background: linear-gradient(90deg, #ffc400, #ffc400);
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .shipments {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 10px;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+}
+
+.contact-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+  }
+  
+  .contact-box {
+    background: white;
+    padding: 30px;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .contact-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Contact Details */
+  .contact-details {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .contact-details div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .contact-icon {
+    font-size: 20px;
+  }
+  
+  /* Form container */
+  .contact-form {
+    margin-top: 30px;
+  }
+  
+  .contact-form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #444;
+    text-align: left;
+  }
+  
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    background: #f8f8f8;
+  }
+  
+  .contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  /* Input field hover & focus effects */
+  .contact-form input:hover,
+  .contact-form select:hover,
+  .contact-form textarea:hover {
+    border-color: #ffc400;
+  }
+  
+  .contact-form input:focus,
+  .contact-form select:focus,
+  .contact-form textarea:focus {
+    border-color: #000000;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 86, 179, 0.3);
+  }
+  
+  /* Submit Button */
+  .contact-form button {
+    background: linear-gradient(90deg, #351c15, #351c15);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .contact-form button:hover {
+    background: linear-gradient(90deg, #ffc400, #ffc400);
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .contact-box {
+      margin: 1rem;
+      padding: 1rem;
+    }
+  
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      padding: 10px;
+    }
+  
+    .contact-form button {
+      width: 100%;
+    }
+  }
+  

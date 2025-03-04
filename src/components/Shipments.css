@@ -1,0 +1,435 @@
+/* ShippingInfo.css */
+/* Container with perspective for 3D effect */
+.parcel-box-container {
+  width: 300px;
+  height: 300px;
+  margin: 50px auto;
+  position: relative;
+  perspective: 800px;
+}
+
+/* The box wrapper uses preserve-3d and is animated */
+.box {
+  /* We use the front face size for the base dimensions */
+  width: 40px;   /* matches the width */
+  height: 90px;  /* matches the height */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  /* Center the box by offsetting with translate */
+  transform: translate(-50%, -50%);
+  animation: rotateBox 10s infinite linear;
+}
+
+/* Basic face styling */
+.face {
+  position: absolute;
+  background: #f0f0f0;
+  border: 2px solid #ccc;
+  opacity: 0.95;
+}
+
+/* FRONT and BACK (size: width x height) */
+.front, .back {
+  width: 40px;
+  height: 90px;
+}
+
+.front {
+  /* Move forward by half the depth (20/2 = 10px) */
+  transform: translateZ(10px);
+}
+
+.back {
+  /* Rotate 180° then push forward (results in -10px along Z) */
+  transform: rotateY(180deg) translateZ(10px);
+}
+
+/* RIGHT and LEFT (size: depth x height) */
+.right, .left {
+  width: 20px;  /* using depth */
+  height: 90px;
+}
+
+.right {
+  /* Rotate to show the right side and translate by half the width (40/2 = 20px) */
+  transform: rotateY(90deg) translateZ(20px);
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(20px);
+}
+
+/* TOP and BOTTOM (size: width x depth) */
+.top, .bottom {
+  width: 40px;
+  height: 20px; /* using depth */
+}
+
+.top {
+  /* Rotate so the top is horizontal and move it up by half the height (90/2 = 45px) */
+  transform: rotateX(90deg) translateZ(45px);
+}
+
+.bottom {
+  transform: rotateX(-90deg) translateZ(45px);
+}
+
+/* Animation keyframes for continuous rotation */
+@keyframes rotateBox {
+  0% {
+    transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateX(360deg) rotateY(360deg);
+  }
+}
+
+/* Styling for the dimensions text */
+.dimensions {
+  margin-top: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.shipping-info-heading a {
+  color: #351c15; /* Change text color to black */
+  text-decoration: underline; /* Keep underline */
+}
+
+.shipping-info-heading a:hover {
+  color: #ffc400; /* Optional: Change color on hover */
+}
+
+.shipping-info-container {
+  position: relative;
+  margin: 20px;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shipping-info-heading {
+  font-size: 1.5em;
+  color: #333;
+  cursor: pointer;
+}
+
+.shipping-info-details {
+  margin-top: 10px;
+  padding: 10px;
+  border-top: 1px solid #ffffff;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.shipping-info-details p {
+  margin: 10px 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .shipping-info-container {
+    margin: 10px;
+    padding: 5px;
+  }
+
+  .shipping-info-heading {
+    font-size: 1.2em;
+  }
+
+  .shipping-info-details {
+    padding: 5px;
+  }
+
+  .shipping-info-details p {
+    font-size: 0.8em;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.shipments {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.query-form {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+label {
+  margin-bottom: 5px;
+
+}
+
+input, select, textarea {
+  padding: 8px;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.submit-btn {
+  grid-column: span 2;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.alert {
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.whatsapp-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.whatsapp-widget img {
+  width: 40px;
+  height: 40px;
+}
+.shipments {
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 800px;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Success/Error message styles */
+.alert {
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border-left: 5px solid #28a745;
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-left: 5px solid #dc3545;
+}
+
+/* Form container */
+.sign-up {
+  margin-top: 30px;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Form elements */
+.form-group {
+  margin-bottom: 1.2rem;
+  text-align: left;
+  padding: 0 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  font-size: 1rem;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  background: #f8f8f8;
+}
+
+/* Input field hover & focus effects */
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+  border-color: #ffc400;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #000000;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 86, 179, 0.3);
+}
+
+/* Submit Button */
+.submit-btn {
+  background: linear-gradient(90deg, #351c15, #351c15);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Button hover effect */
+.submit-btn:hover {
+  background: linear-gradient(90deg, #ffc400, #ffc400);
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .shipments {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 10px;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+}

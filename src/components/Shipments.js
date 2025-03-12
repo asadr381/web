@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import CustomCaptcha from './CustomCaptcha';
 import './CustomCaptcha.css'; // Import the CSS for CustomCaptcha
 import wa from '../img/wa.png';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 // Frappe URL and API credentials
 const FRAPPE_URL = process.env.REACT_APP_FRAPPE_URL;
@@ -42,12 +43,17 @@ function Shipments() {
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState("");
   const [captchaVerified, setCaptchaVerified] = useState(false);
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleCheckboxChange = (e) => {
+    setPrivacyAccepted(e.target.checked);
   };
 
   const isValidEmail = (email) => {
@@ -66,6 +72,12 @@ function Shipments() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!privacyAccepted) {
+      setMessage("⚠️ Please accept the privacy policy.");
+      setMessageType("error");
+      return;
+    }
 
     if (!captchaVerified) {
       setMessage("⚠️ Please complete the CAPTCHA.");
@@ -243,8 +255,23 @@ function Shipments() {
               <CustomCaptcha id="captcha" name="captcha" onVerify={handleCaptchaVerify} />
             </div>
           </div>
+          <label htmlFor="privacyPolicy">
+            We respect your privacy. Your information is only used to contact you for your issues or provide shipping rates. I have read and accept the <Link to="/PrivacyPolicy" target="_blank" rel="noopener noreferrer">Privacy Policy</Link>.
+          </label>
+          <div className="form-group full-width">
+            <div className="checkbox-container">
+              <input
+                type="checkbox"
+                id="privacyPolicy"
+                name="privacyPolicy"
+                checked={privacyAccepted}
+                onChange={handleCheckboxChange}
+                required
+              />
+            </div>
+          </div>
           <button type="submit" className="submit-btn">Submit Query</button>
-          <p>We respect your privacy. Your information is only used to contact you for your issues or provide shipping rates.</p>
+          
           {message && (
             <div className={`alert ${messageType === "success" ? "alert-success" : "alert-error"}`}>
               {message}

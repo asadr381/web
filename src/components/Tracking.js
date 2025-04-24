@@ -101,7 +101,7 @@ const ShipmentDetails = () => {
   return (
     <div className="shipment-details">
       <h2>Track Shipment</h2>
-<h2>⚠️Disclaimer: This shipment tracking is powered by UPS.COM</h2>
+<h6>⚠️Disclaimer: This shipment tracking is powered by UPS.COM</h6>
       <div className="input-container">
         <input
           type="text"

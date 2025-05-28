@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navigation.css';
+import logo from "../img/logoups.jpeg";
  // Add your logo image
 
 function Navigation() {
@@ -24,7 +25,7 @@ function Navigation() {
       {/* Logo */}
       <Link to="/" style={{ textDecoration: 'none' }}>
         <img 
-        //  src={logo} 
+         src={logo} 
           alt="Logo"
           style={{ width: '160px', height: '100px' }} 
         />

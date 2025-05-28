@@ -24,7 +24,7 @@ function Navigation() {
       {/* Logo */}
       <Link to="/" style={{ textDecoration: 'none' }}>
         <img 
-          src={logo} 
+        //  src={logo} 
           alt="Logo"
           style={{ width: '160px', height: '100px' }} 
         />

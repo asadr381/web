@@ -29,7 +29,7 @@ function Navigation() {
      //  alt="Logo"
      //   style={{ width: '180px', height: '100px' }} 
     //  />
-     </Link>
+  //   </Link>
 
       {/* Text */}
      <h4 style={{ 

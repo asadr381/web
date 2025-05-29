@@ -17,29 +17,29 @@ function Navigation() {
 
 
 
-   //   <div style={{ 
-   //   display: 'flex', 
-   //   alignItems: 'center', 
-   //   gap: '16px' 
-  //  }}>
+     <div style={{ 
+     display: 'flex', 
+    alignItems: 'center', 
+     gap: '16px' 
+   }}>
       {/* Logo */}
-     // <Link to="/" style={{ textDecoration: 'none' }}>
-      //  <img 
-        // src={logo} 
-        //  alt="Logo"
-       //   style={{ width: '180px', height: '100px' }} 
-      //  />
-     // </Link>
+    // <Link to="/" style={{ textDecoration: 'none' }}>
+    // <img 
+     //  src={logo} 
+     //  alt="Logo"
+     //   style={{ width: '180px', height: '100px' }} 
+    //  />
+     </Link>
 
       {/* Text */}
-    //  <h4 style={{ 
-     //   color: 'white', 
-     //   textAlign: 'center', 
-      //  display: 'flex', 
-      //  flexDirection: 'column', 
-     //   justifyContent: 'center', 
-      //  margin: 0 
-    //  }}>
+     <h4 style={{ 
+    color: 'white', 
+    textAlign: 'center', 
+    display: 'flex', 
+    flexDirection: 'column', 
+      justifyContent: 'center', 
+     margin: 0 
+   }}>
         <span 
           style={{ 
             fontSize: '22px', 

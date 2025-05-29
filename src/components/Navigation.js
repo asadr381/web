@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navigation.css';
-//import logo from "../img/logoups.jpeg";
+import logo from "../img/logoups.jpeg";
  // Add your logo image
 
 function Navigation() {

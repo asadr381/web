@@ -23,13 +23,13 @@ function Navigation() {
      gap: '16px' 
    }}>
       {/* Logo */}
-    // <Link to="/" style={{ textDecoration: 'none' }}>
-    // <img 
-     //  src={logo} 
-     //  alt="Logo"
-     //   style={{ width: '180px', height: '100px' }} 
-    //  />
-  //   </Link>
+ <Link to="/" style={{ textDecoration: 'none' }}>
+ <img 
+    src={logo} 
+  alt="Logo"
+  style={{ width: '180px', height: '100px' }} 
+  />
+  </Link>
 
       {/* Text */}
      <h4 style={{ 

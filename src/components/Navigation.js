@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navigation.css';
-import logo from "../img/logoups.jpeg";
+
  // Add your logo image
 
 function Navigation() {
@@ -23,13 +23,6 @@ function Navigation() {
      gap: '16px' 
    }}>
       {/* Logo */}
- <Link to="/" style={{ textDecoration: 'none' }}>
- <img 
-    src={logo} 
-  alt="Logo"
-  style={{ width: '180px', height: '100px' }} 
-  />
-  </Link>
 
       {/* Text */}
      <h4 style={{ 

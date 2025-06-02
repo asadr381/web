@@ -28,7 +28,7 @@ const ShipmentDetails = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const apiBaseUrl = 'https://excel-api-0x2r.onrender.com/track/';  
+  const apiBaseUrl = 'https://excel-api-gl6f.onrender.com/track/';  
 
   const handleTrackShipment = async () => {
     if (!trackingNumber) {

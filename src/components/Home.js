@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
 import { motion } from 'framer-motion';
-import billImage from '../img/pic1.jpg';
+import billImage from '../img/pic1.jpeg';
 import serviceImage from '../img/pic2.jpg'; // Your service image
 import collageImage from '../img/pic3.jpg'; 
 import lahore from '../img/lahore.jpg';

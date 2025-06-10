@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
 import { motion } from 'framer-motion';
-//import billImage from '../img/pic1.jpeg';
+import billImage from '../img/pic1.jpeg';
 import serviceImage from '../img/pic2.jpg'; // Your service image
 import collageImage from '../img/pic3.jpg'; 
 import lahore from '../img/lahore.jpg';
@@ -23,26 +23,26 @@ function Home() {
     <div className="home-container">
       <div className="content-wrapper">
 
-      //  {/* Hero Section */}
-       // <motion.div
-      //    className="hero-section"
-        //  initial={{ opacity: 0, x: -100 }}
-       //   animate={{ opacity: 1, x: 0 }}
-        //  transition={{ duration: 1, ease: "easeOut" }}
-       //   style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '20px' }}
-      //  >
-        //  {/* Hero Image */}
-         //<motion.img
-           // src={billImage}
-           // alt="Business Growth"
-           // className="hero-image"
-          //  initial={{ opacity: 0 }}
-          //  animate={{ opacity: 1 }}
-          //  transition={{ duration: 1, delay: 0.5 }}
-          //  style={{ width: '50%', borderRadius: '8px' }}
-        //  /> 
+     {/* Hero Section */}
+       <motion.div
+         className="hero-section"
+     initial={{ opacity: 0, x: -100 }}
+     animate={{ opacity: 1, x: 0 }}
+     transition={{ duration: 1, ease: "easeOut" }}
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '20px' }}
+    >
+       {/* Hero Image */}
+  <motion.img
+        src={billImage}
+   alt="Business Growth"
+            className="hero-image"
+            initial={{ opacity: 0 }}
+           animate={{ opacity: 1 }}
+           transition={{ duration: 1, delay: 0.5 }}
+          style={{ width: '50%', borderRadius: '8px' }}
+          /> 
           
-        //  {/* Text Content */}
+         {/* Text Content */}
           <motion.div
             className="text-content"
             initial={{ opacity: 0, x: 100 }}

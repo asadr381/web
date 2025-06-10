@@ -14,7 +14,7 @@ import pedro from "../img/pedro.png";
 import Tagheuer from "../img/Tagheuer.png";
 import tmiex from "../img/tmiex.png";
 
-import upslogo from '../img/asclogo.png';
+import wa from '../img/wa.png';
 
 const partners = [
   {
@@ -48,7 +48,6 @@ const partners = [
     description: 'Adidas has its roots in Germany but they are a truly global company. Around the world, Adidas employs over 57,000 people. Every year they produce over 900 million sports and sports lifestyle products with independent manufacturing partners worldwide.'
   },
   {
-    logo: upslogo,
     name: 'UPS',
     description: 'UPS, founded in 1907, is one of the largest global logistics companies. Over the years, UPS has become the world\'s largest package delivery company and a global leader in specialized logistics and transportation services. UPS provides its services in more than 200 countries and territories worldwide.'
   },

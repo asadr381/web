@@ -32,15 +32,15 @@ function Home() {
           style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '20px' }}
         >
           {/* Hero Image */}
-         <motion.img
-            src={billImage}
-            alt="Business Growth"
-            className="hero-image"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            style={{ width: '50%', borderRadius: '8px' }}
-          /> 
+         //<motion.img
+           // src={billImage}
+           // alt="Business Growth"
+           // className="hero-image"
+          //  initial={{ opacity: 0 }}
+          //  animate={{ opacity: 1 }}
+          //  transition={{ duration: 1, delay: 0.5 }}
+          //  style={{ width: '50%', borderRadius: '8px' }}
+        //  /> 
           
           {/* Text Content */}
           <motion.div

@@ -32,7 +32,7 @@ function Home() {
           style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '20px' }}
         >
           {/* Hero Image */}
-          <motion.img
+         /* <motion.img
             src={billImage}
             alt="Business Growth"
             className="hero-image"
@@ -40,7 +40,7 @@ function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
             style={{ width: '50%', borderRadius: '8px' }}
-          />
+          /> */
           
           {/* Text Content */}
           <motion.div

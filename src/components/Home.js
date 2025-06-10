@@ -23,15 +23,15 @@ function Home() {
     <div className="home-container">
       <div className="content-wrapper">
 
-        {/* Hero Section */}
-        <motion.div
-          className="hero-section"
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '20px' }}
-        >
-          {/* Hero Image */}
+      //  {/* Hero Section */}
+       // <motion.div
+      //    className="hero-section"
+        //  initial={{ opacity: 0, x: -100 }}
+       //   animate={{ opacity: 1, x: 0 }}
+        //  transition={{ duration: 1, ease: "easeOut" }}
+       //   style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '20px' }}
+      //  >
+        //  {/* Hero Image */}
          //<motion.img
            // src={billImage}
            // alt="Business Growth"
@@ -42,7 +42,7 @@ function Home() {
           //  style={{ width: '50%', borderRadius: '8px' }}
         //  /> 
           
-          {/* Text Content */}
+        //  {/* Text Content */}
           <motion.div
             className="text-content"
             initial={{ opacity: 0, x: 100 }}

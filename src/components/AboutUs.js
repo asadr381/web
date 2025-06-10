@@ -13,7 +13,7 @@ import NIKE from "../img/NIKE.png";
 import pedro from "../img/pedro.png";
 import Tagheuer from "../img/Tagheuer.png";
 import tmiex from "../img/tmiex.png";
-import upslogo from "../img/asclogo.png";
+import upslogo from "../img/asclogo.PNG";
 import wa from '../img/wa.png';
 
 const partners = [

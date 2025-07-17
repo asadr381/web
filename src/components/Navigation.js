@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { FaHome, FaBoxOpen, FaSearch, FaServicestack, FaEnvelope, FaInfoCircle, FaShieldAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './Navigation.css';
 import logo from '../img/UPS-logo.png';
-import { motion } from 'framer-motion';
 
  // Add your logo image
 
@@ -29,7 +29,7 @@ function Navigation() {
         <img 
           src={logo} 
           alt="Logo"
-          style={{ width: '63px', height: '100px', paddingLeft: '25px', paddingRight: '10px' }} 
+          style={{ width: '63px', height: '100px', paddingLeft: '25px' }}  // Adjusted paddingLeft
         />
       </Link>
       {/* Logo */}
@@ -92,77 +92,41 @@ function Navigation() {
       
       {/* Navigation Links */}
       <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-        <li>   <Link to="/" style={{ textDecoration: 'none' }}>
-                      <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        className="cta-button"
-                        style={{ backgroundColor: '#ffc400', color: 'black', border: 'none', borderRadius: '5px', padding: '10px 20px', cursor: 'pointer' }}
-                      >
-                       Home
-                      </motion.button>
-                    </Link></li>
-        <li>   <Link to="/Shipments" style={{ textDecoration: 'none' }}>
-                      <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        className="cta-button"
-                        style={{ backgroundColor: '#ffc400', color: 'black', border: 'none', borderRadius: '5px', padding: '10px 20px', cursor: 'pointer' }}
-                      >
-                        Shipments
-                      </motion.button>
-                    </Link></li>
-        <li>   <Link to="/tracking" style={{ textDecoration: 'none' }}>
-                      <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        className="cta-button"
-                        style={{ backgroundColor: '#ffc400', color: 'black', border: 'none', borderRadius: '5px', padding: '10px 20px', cursor: 'pointer' }}
-                      >
-                        Tracking
-                      </motion.button>
-                    </Link></li>
-        <li>   <Link to="/services" style={{ textDecoration: 'none' }}>
-                      <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        className="cta-button"
-                        style={{ backgroundColor: '#ffc400', color: 'black', border: 'none', borderRadius: '5px', padding: '10px 20px', cursor: 'pointer' }}
-                      >
-                        Services
-                      </motion.button>
-                    </Link></li>
-        <li>   <Link to="/contactus" style={{ textDecoration: 'none' }}>
-                      <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        className="cta-button"
-                        style={{ backgroundColor: '#ffc400', color: 'black', border: 'none', borderRadius: '5px', padding: '10px 20px', cursor: 'pointer' }}
-                      >
-                        Contact Us
-                      </motion.button>
-                    </Link></li>
-        <li>   <Link to="/aboutus" style={{ textDecoration: 'none' }}>
-                      <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        className="cta-button"
-                        style={{ backgroundColor: '#ffc400', color: 'black', border: 'none', borderRadius: '5px', padding: '10px 20px', cursor: 'pointer' }}
-                      >
-                        About Us
-                      </motion.button>
-                    </Link></li>
-        <li>   <Link to="/PrivacyPolicy" style={{ textDecoration: 'none' }}>
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="cta-button"
-                style={{ backgroundColor: '#ffc400', color: 'black', border: 'none', borderRadius: '5px', padding: '10px 20px', cursor: 'pointer' }}
-              >
-                Privacy Policy
-              </motion.button>
-            </Link></li>
-        
+        <li>
+          <Link to="/" onClick={toggleMenu} style={{ color: '#351c15', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <FaHome style={{ color: '#351c15' }} /> Home
+          </Link>
+        </li>
+        <li>
+          <Link to="/shipments" onClick={toggleMenu} style={{ color: '#351c15', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <FaBoxOpen style={{ color: '#351c15' }} /> Shipments
+          </Link>
+        </li>
+        <li>
+          <Link to="/tracking" onClick={toggleMenu} style={{ color: '#351c15', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <FaSearch style={{ color: '#351c15' }} /> Tracking
+          </Link>
+        </li>
+        <li>
+          <Link to="/services" onClick={toggleMenu} style={{ color: '#351c15', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <FaServicestack style={{ color: '#351c15' }} /> Services
+          </Link>
+        </li>
+        <li>
+          <Link to="/ContactUs" onClick={toggleMenu} style={{ color: '#351c15', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <FaEnvelope style={{ color: '#351c15' }} /> Contact Us
+          </Link>
+        </li>
+        <li>
+          <Link to="/AboutUs" onClick={toggleMenu} style={{ color: '#351c15', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <FaInfoCircle style={{ color: '#351c15' }} /> About Us
+          </Link>
+        </li>
+        <li>
+          <Link to="/PrivacyPolicy" onClick={toggleMenu} style={{ color: '#351c15', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <FaShieldAlt style={{ color: '#351c15' }} /> Privacy Policy
+          </Link>
+        </li>
       </ul>
     </nav>
   );

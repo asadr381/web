@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navigation.css';
+import logo from '../img/UPS-logo.png'
 
  // Add your logo image
 
@@ -22,6 +23,14 @@ function Navigation() {
     alignItems: 'center', 
      gap: '16px' 
    }}>
+
+   <Link to="/" style={{ textDecoration: 'none' }}>
+        <img 
+          src={logo} 
+          alt="Logo"
+          style={{ width: '160px', height: '100px' }} 
+        />
+      </Link>
       {/* Logo */}
 
       {/* Text */}

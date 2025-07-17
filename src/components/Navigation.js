@@ -28,7 +28,7 @@ function Navigation() {
         <img 
           src={logo} 
           alt="Logo"
-          style={{ width: '80px', height: '50px' }} 
+          style={{ width: '50px', height: '50px' }} 
         />
       </Link>
       {/* Logo */}

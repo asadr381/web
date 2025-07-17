@@ -1,7 +1,7 @@
 /* Footer Styles */
 .footer {
-  background-color: #351c15;
-  color: #fff;
+  background-color: #f4f4f4;
+  color: #351c15;
   padding: 50px 20px;
   font-family: 'Arial', sans-serif;
 }
@@ -23,13 +23,13 @@
 .footer-section h3 {
   font-size: 1.5rem;
   margin-bottom: 15px;
-  color: #ddd;
+  color: #351c15;
 }
 
 .footer-section p, .footer-section ul {
   font-size: 1rem;
   line-height: 1.5;
-  color: #ddd;
+  color: #351c15;
 }
 
 .footer-section ul {
@@ -43,7 +43,7 @@
 
 .footer-section ul li a {
   text-decoration: none;
-  color: #ddd;
+  color: #351c15;
   transition: color 0.3s ease;
 }
 
@@ -58,12 +58,12 @@
 .social-icons a {
   font-size: 1.5rem;
   margin-right: 15px;
-  color: #ddd;
+  color: #351c15;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .social-icons a:hover {
-  color: #ddd;
+  color: #ffc400;
   transform: scale(1.1);
 }
 
@@ -71,7 +71,7 @@
   text-align: center;
   padding-top: 20px;
   font-size: 1rem;
-  border-top: 1px solid #ffffffc4;
+  border-top: 1px solid #351c15;
   margin-top: 20px;
 }
 

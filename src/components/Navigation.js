@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navigation.css';
-import logo from '../img/UPS-logo.png'
+import logo from '../img/UPS-logo.png';
 
  // Add your logo image
 

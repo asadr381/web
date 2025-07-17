@@ -35,7 +35,7 @@ function Navigation() {
 
       {/* Text */}
      <h4 style={{ 
-    color: 'white', 
+    color: '#351c15', 
     textAlign: 'center', 
     display: 'flex', 
     flexDirection: 'column', 

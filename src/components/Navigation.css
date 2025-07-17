@@ -102,7 +102,7 @@
   display: none;
   font-size: 2rem;
   cursor: pointer;
-  color: white;
+  color: #351c15;
   transition: transform 0.3s ease-in-out;
   z-index: 1100; /* Ensures Hamburger is Clickable */
 }
@@ -135,7 +135,7 @@
     right: -250px; /* Start off-screen */
     width: 250px;
     height: 100vh;
-    background-color: #351c15;
+    background-color: #f4f4f4;
     text-align: right;
     padding-top: 3rem;
     transition: right 0.4s ease-in-out;

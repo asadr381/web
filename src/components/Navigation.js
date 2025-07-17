@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navigation.css';
 import logo from '../img/UPS-logo.png';
+import { motion } from 'framer-motion';
 
  // Add your logo image
 
@@ -91,13 +92,77 @@ function Navigation() {
       
       {/* Navigation Links */}
       <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-        <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
-        <li><Link to="/shipments" onClick={toggleMenu}>Shipments</Link></li>
-        <li><Link to="/tracking" onClick={toggleMenu}>Tracking</Link></li>
-        <li><Link to="/services" onClick={toggleMenu}>Services</Link></li>
-        <li><Link to="/ContactUs" onClick={toggleMenu}>Contact Us</Link></li>
-        <li><Link to="/AboutUs" onClick={toggleMenu}>About Us</Link></li>
-        <li><Link to="/PrivacyPolicy" onClick={toggleMenu}>Privacy Policy</Link></li>
+        <li>   <Link to="/" style={{ textDecoration: 'none' }}>
+                      <motion.button
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="cta-button"
+                        style={{ backgroundColor: '#ffc400', color: 'black', border: 'none', borderRadius: '5px', padding: '10px 20px', cursor: 'pointer' }}
+                      >
+                       Home
+                      </motion.button>
+                    </Link></li>
+        <li>   <Link to="/Shipments" style={{ textDecoration: 'none' }}>
+                      <motion.button
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="cta-button"
+                        style={{ backgroundColor: '#ffc400', color: 'black', border: 'none', borderRadius: '5px', padding: '10px 20px', cursor: 'pointer' }}
+                      >
+                        Shipments
+                      </motion.button>
+                    </Link></li>
+        <li>   <Link to="/tracking" style={{ textDecoration: 'none' }}>
+                      <motion.button
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="cta-button"
+                        style={{ backgroundColor: '#ffc400', color: 'black', border: 'none', borderRadius: '5px', padding: '10px 20px', cursor: 'pointer' }}
+                      >
+                        Tracking
+                      </motion.button>
+                    </Link></li>
+        <li>   <Link to="/services" style={{ textDecoration: 'none' }}>
+                      <motion.button
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="cta-button"
+                        style={{ backgroundColor: '#ffc400', color: 'black', border: 'none', borderRadius: '5px', padding: '10px 20px', cursor: 'pointer' }}
+                      >
+                        Services
+                      </motion.button>
+                    </Link></li>
+        <li>   <Link to="/contactus" style={{ textDecoration: 'none' }}>
+                      <motion.button
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="cta-button"
+                        style={{ backgroundColor: '#ffc400', color: 'black', border: 'none', borderRadius: '5px', padding: '10px 20px', cursor: 'pointer' }}
+                      >
+                        Contact Us
+                      </motion.button>
+                    </Link></li>
+        <li>   <Link to="/aboutus" style={{ textDecoration: 'none' }}>
+                      <motion.button
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="cta-button"
+                        style={{ backgroundColor: '#ffc400', color: 'black', border: 'none', borderRadius: '5px', padding: '10px 20px', cursor: 'pointer' }}
+                      >
+                        About Us
+                      </motion.button>
+                    </Link></li>
+        <li>   <Link to="/PrivacyPolicy" style={{ textDecoration: 'none' }}>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="cta-button"
+                style={{ backgroundColor: '#ffc400', color: 'black', border: 'none', borderRadius: '5px', padding: '10px 20px', cursor: 'pointer' }}
+              >
+                Privacy Policy
+              </motion.button>
+            </Link></li>
+        
       </ul>
     </nav>
   );
